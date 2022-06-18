@@ -12,8 +12,6 @@ function PreguntasyRespuestas(numeroPregunta, textoPregunta, numeroRespuestaCorr
     this.respuestasPosibles = respuestasPosibles;
 }      
     
-
-
 let item1 = new PreguntasyRespuestas(1, "asd?", 1, "asd", ["qwe","rty","uio","fgh","jkl", "zxc", "vbn"]);
 let item2 = new PreguntasyRespuestas(2, "fgh?", 2, "fgh", ["qwe","rty","uio","asd","jkl", "zxc", "vbn"]);
 let item3 = new PreguntasyRespuestas(3, "jkl?", 3, "jkl", ["qwe","rty","uio","asd","fgh", "zxc", "vbn"]);
@@ -25,32 +23,37 @@ let item7 = new PreguntasyRespuestas(7, "uio?", 7, "uio", ["qwe","rty","fgh","as
 let contenedorItems = [item1,item2,item3,item4,item5,item6,item7];
 
 
-function cubilete(cantidadDeNumeros, numeroPreexistente, min, max) {        
+function generarListaNumeros(cantidad, numeroPreexistente, desdeNumero, hastaNumero) {        
     
-    let cajaDeNumeros = [];
-    cajaDeNumeros.push(numeroPreexistente);    
-    if(cajaDeNumeros[0] == undefined ) {
-        cajaDeNumeros.pop();
+    let listaNumeros = [];
+    listaNumeros.push(numeroPreexistente);   
+	
+    if(listaNumeros[0] == undefined ) {
+        listaNumeros.pop();
     } 
-        while(cajaDeNumeros.length < cantidadDeNumeros) {
-        function generaNumeroAleatorio (min, max) {
-                min = Math.ceil(min);
-                max = Math.floor(max);
-                return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive 
-        }
-        let numeroAleatorio = generaNumeroAleatorio(min, max);
+	
+	while(listaNumeros.length < cantidad) {
 
-        function chequeaSiExiste(elementosDelArray) {
-            return elementosDelArray == numeroAleatorio;
-        }
+		function generarNumeroAleatorio(desdeNumero, hastaNumero) {
+			/*desdeNumero = Math.ceil(desdeNumero);
+			hastaNumero = Math.floor(hastaNumero);*/
+			return Math.floor(Math.random() * (hastaNumero - desdeNumero + 1) + desdeNumero); //desdeNumero y hastNumero son inclusivos 
+		}
 
-        let resultadoChequeaSiExiste = cajaDeNumeros.some(chequeaSiExiste);        
-        if(resultadoChequeaSiExiste == false) {
-            cajaDeNumeros.push(numeroAleatorio);            
-        }  
+		let numeroAleatorio = generarNumeroAleatorio(desdeNumero, hastaNumero);
+	
+		// function chequeaSiExiste(elementosDelArray) {
+		// 	return elementosDelArray == numeroAleatorio;
+		// }
+	
+		let numeroExistente = listaNumeros.some(numero => numero === numeroAleatorio);      
+
+		if(!numeroExistente) {
+            listaNumeros.push(numeroAleatorio)
+        } 
     }    
-    //console.log("Cubilete:" + cajaDeNumeros);
-    return cajaDeNumeros;
+  	//console.log("Cubilete:" + listaNumeros);
+    return listaNumeros;
 }   
 
 function ItemsPrevio(pregunta, respuestas) {
@@ -61,11 +64,18 @@ function ItemsPrevio(pregunta, respuestas) {
 
 let contenedorItemsPrevio = [];
 
-let cantidadPreguntasContenedorItems = contenedorItems.length;
+function ItemsExamen(pregunta, respuestas) {
+	this.pregunta = pregunta,
+	this.respuestas = []
+}
 
-function seleccionadorPreguntas(cantidadDePreguntas, min, max) {
+let contenedorItemsExamen = [];
 
-    let preguntasSeleccionadas = cubilete(cantidadDePreguntas, undefined, min, max);    
+
+
+function seleccionadorPreguntas(cantidadDePreguntas) {
+
+    let preguntasSeleccionadas = generarListaNumeros(cantidadDePreguntas, undefined, 0, cantidadMaximaPreguntas-1);    
     for(let i = 0; i < preguntasSeleccionadas.length; i++) {
 
         contenedorItemsPrevio.push(new ItemsPrevio(preguntasSeleccionadas[i]));        
@@ -73,32 +83,31 @@ function seleccionadorPreguntas(cantidadDePreguntas, min, max) {
     return preguntasSeleccionadas; 
 }
 
-function seleccionadorRespuestas(cantidadDeRespuestas, min, max) {
+function seleccionadorRespuestas(cantidadDeRespuestas) {
+    
+    for(let i = 0; i < contenedorItemsPrevio.length ; i++) {
 
-   for(let j = 0; j < contenedorItemsPrevio.length ; j++) {
-        let nroPregunta = contenedorItemsPrevio[j].pregunta;
-        max = contenedorItems[nroPregunta].respuestasPosibles.length-1;
-        let nuevasRespuestas = cubilete(cantidadDeRespuestas, contenedorItemsPrevio[j].pregunta, min, max);
-        for(let i = 0 ; i < nuevasRespuestas.length; i++) {
+        let idPregunta = contenedorItemsPrevio[i].pregunta;
 
-            contenedorItemsPrevio[j].respuestas.push(nuevasRespuestas[i]);
+        let cantidadMaximaRespuestas = contenedorItems[idPregunta].respuestasPosibles.length-1;
+
+        let nuevasRespuestas = generarListaNumeros(cantidadDeRespuestas, contenedorItemsPrevio[i].pregunta, 0, cantidadMaximaRespuestas);
+
+        for(let j = 0 ; j < nuevasRespuestas.length; j++) {
+
+            contenedorItemsPrevio[i].respuestas.push(nuevasRespuestas[j]);
         }
-   }         
+    }  
 }
 
-function ItemsExamen(pregunta, respuestas) {
-    this.pregunta = pregunta,
-    this.respuestas = []
-}
 
-let contenedorItemsExamen = [];
 
 function mezclaRespuestas(min, max) {
 
-    for(let i = 0; i < contenedorItemsPrevio.length; i++) {
+	for(let i = 0; i < contenedorItemsPrevio.length; i++) {
 
-        contenedorItemsExamen.push(new ItemsExamen(contenedorItemsPrevio[i].pregunta));     
-        let cajaMezcladora = [];    
+		contenedorItemsExamen.push(new ItemsExamen(contenedorItemsPrevio[i].pregunta));		
+	    let cajaMezcladora = [];    
         while(cajaMezcladora.length < contenedorItemsPrevio[i].respuestas.length) {
 
             function generaNumeroAleatorio (min, max) {
@@ -107,19 +116,19 @@ function mezclaRespuestas(min, max) {
                 return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive 
             }
             let numeroAleatorio = generaNumeroAleatorio(min, max);
-            function chequeaSiExiste(elementosDelArray) {
+			function chequeaSiExiste(elementosDelArray) {
 
-                return elementosDelArray == numeroAleatorio;
-            }
+				return elementosDelArray == numeroAleatorio;
+			}
 
-            let resultadoChequeaSiExiste = cajaMezcladora.some(chequeaSiExiste);            
-            if(resultadoChequeaSiExiste == false) {
+			let resultadoChequeaSiExiste = cajaMezcladora.some(chequeaSiExiste);  			
+			if(resultadoChequeaSiExiste == false) {
 
                 let j = 0;
-                cajaMezcladora.push(numeroAleatorio);
-                contenedorItemsExamen[i].respuestas.push(contenedorItemsPrevio[i].respuestas[numeroAleatorio]);  
-                j++;          
-            }  
+				cajaMezcladora.push(numeroAleatorio);
+				contenedorItemsExamen[i].respuestas.push(contenedorItemsPrevio[i].respuestas[numeroAleatorio]);  
+				j++;          
+			}  
        }
    }   
    return contenedorItemsExamen;
@@ -163,16 +172,16 @@ function muestraItemsExamen() {
         
         for(let j = 0 ; j < contenedorItemsExamen[0].respuestas.length; j++) {
             
-            contadorId2++;          
+            contadorId2++;        	
             let nroRespuesta = contenedorItemsExamen[i].respuestas[j];
             let nroPregunta = contenedorItemsExamen[i].pregunta;
             var texto_respuestas;                       
             if(nroRespuesta == nroPregunta) {
 
-                texto_respuestas = `${contenedorItems[nroPregunta].textoRespuestaCorrecta}`;
+            	texto_respuestas = `${contenedorItems[nroPregunta].textoRespuestaCorrecta}`;
             } else {
 
-                texto_respuestas = `${contenedorItems[nroPregunta].respuestasPosibles[nroRespuesta]}`;
+            	texto_respuestas = `${contenedorItems[nroPregunta].respuestasPosibles[nroRespuesta]}`;
             }                     
 
             //Seleccionar el elemento existente
@@ -217,22 +226,58 @@ function muestraItemsExamen() {
         }
     }
 }
-//Solo cambiar cantidadPreguntas y cantidadRespuestas
 
-function generarExamen(cantidadPreguntas, cantidadRespuestas, numeroIteracionMaxPreguntas) {
 
-    if(cantidadPreguntas <= cantidadPreguntasContenedorItems) {
+function generarExamen(cantidadPreguntas, cantidadRespuestas) {
 
-        seleccionadorPreguntas(cantidadPreguntas, 0, numeroIteracionMaxPreguntas);
-        seleccionadorRespuestas(cantidadRespuestas, 0);
-        console.log(contenedorItemsPrevio);
-        mezclaRespuestas(0,cantidadRespuestas-1);
-        console.log(contenedorItemsExamen);
-        muestraItemsExamen();       
-    } else {    
+	if(cantidadPreguntas <= cantidadMaximaPreguntas) {
 
-        console.log("El número requerido de preguntas a mostrar es mayor a la cantidad de preguntas disponibles");
-    }
+		seleccionadorPreguntas(cantidadPreguntas);
+	    seleccionadorRespuestas(cantidadRespuestas);
+	    //console.log(contenedorItemsPrevio);
+	    mezclaRespuestas(0,cantidadRespuestas-1);
+	    console.log("contenedorItemsExamen: ",contenedorItemsExamen);
+	    muestraItemsExamen();		
+	} else {    
+
+    	console.log("El número requerido de preguntas a mostrar es mayor a la cantidad de preguntas disponibles");
+	}
 }
 
-generarExamen(7, 4, cantidadPreguntasContenedorItems-1);
+let cantidadMaximaPreguntas = contenedorItems.length;
+
+let cantidadPreguntas = 4;
+let cantidadRespuestas = 7;
+
+generarExamen(cantidadPreguntas, cantidadRespuestas);
+
+let $botonCorregir = document.querySelector("#boton-corregir");
+
+function cuentaRespuestasAcertadas() {
+
+    let contadorAcertadas = 0;
+
+    for(let i = 1 ; i <= cantidadPreguntas; i++) {
+        
+        let string = document.querySelector('#form_preguntas')["name_input_"+i];       
+        let $respuestas = string.value;
+        // console.log($respuestas);
+        let nroPregunta= contenedorItemsExamen[i-1].pregunta;
+        if($respuestas === contenedorItems[nroPregunta].textoRespuestaCorrecta) {
+            contadorAcertadas++;
+        }
+    }
+    console.log("Cantidad de respuestas aprobadas: "+ contadorAcertadas);
+    return contadorAcertadas;
+}
+
+function sacaPromedio() {
+    
+    let sumaRespuestasAcertadas = cuentaRespuestasAcertadas();
+    let promedio = (sumaRespuestasAcertadas/cantidadPreguntas).toFixed(2);
+    console.log("El promedio es: "+promedio);
+    return promedio;
+}
+
+$botonCorregir.addEventListener('click', sacaPromedio);
+

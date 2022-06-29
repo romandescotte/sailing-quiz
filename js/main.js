@@ -12,13 +12,119 @@ function PreguntasyRespuestas(numeroPregunta, textoPregunta, numeroRespuestaCorr
     this.respuestasPosibles = respuestasPosibles;
 }      
     
-let item1 = new PreguntasyRespuestas(1, "asd?", 1, "asd", ["qwe","rty","uio","fgh","jkl", "zxc", "vbn"]);
-let item2 = new PreguntasyRespuestas(2, "fgh?", 2, "fgh", ["qwe","rty","uio","asd","jkl", "zxc", "vbn"]);
-let item3 = new PreguntasyRespuestas(3, "jkl?", 3, "jkl", ["qwe","rty","uio","asd","fgh", "zxc", "vbn"]);
-let item4 = new PreguntasyRespuestas(4, "zxc?", 4, "zxc", ["qwe","rty","uio","asd","jkl", "fgh", "vbn"]);
-let item5 = new PreguntasyRespuestas(5, "vbn?", 5, "vbn", ["qwe","rty","uio","asd","jkl", "zxc", "fgh"]);
-let item6 = new PreguntasyRespuestas(6, "rty?", 6, "rty", ["qwe","fgh","uio","asd","jkl", "zxc", "vbn"]);
-let item7 = new PreguntasyRespuestas(7, "uio?", 7, "uio", ["qwe","rty","fgh","asd","jkl", "zxc", "vbn"]);
+let item1 = new PreguntasyRespuestas(1, "¿Qué son los baos?", 1, "Vigas que en unión con las cuadernas conforman el soporte de la cubierta", 
+["Piezas robustas que continúa a la quilla y terminan el buque por la popa",
+"Piezas que continúan la quilla en el extremo de proa de la embarcación",
+"Canto superior del costado de un buque", 
+"Ninguna es la correcta"]);
+
+let item2 = new PreguntasyRespuestas(2, "¿Cuál es el puño de amura?", 2, "El puño comprendido entre el pujamen y el gratil", 
+["Puño al que se le sujeta la driza",
+"El puño comprendido entre la baluma y el gratil",
+"Puño inferior en el que se afirma la escota",
+"Ninguna es la correcta"]);
+
+let item3 = new PreguntasyRespuestas(3, "¿Qué es la carlinga?", 3, "Herraje en donde encaja el pie del mástil", 
+["Orificio de la cubierta por el cual se erige el mástil, cuando éste es pasante",
+"Cable que sostiene el palo lateralmente y hacia popa",
+"Mecanismo que sirve para impedir que la botavara se eleve por efecto del viento",
+"Ninguna es la correcta"]);
+
+let item4 = new PreguntasyRespuestas(4, "¿Qué son las relingas?", 4, "Cabos que refuerzan el borde de algunas velas y facilitan su inserción en la ranura del mástil o botavara", 
+["Orificios practicados en las velas que sirven para reducir la superficie vélica",
+"Refuerzos insertados en la vela que sirven para sostener la baluma y darle forma",
+"Ojales metálicos por donde se pasan los cabos de las velas",
+"Ninguna es la correcta"]);
+
+let item5 = new PreguntasyRespuestas(5, "¿Cuál de las siguientes veles presenta mayor superficie?", 5, "Genoa 1", 
+["Genoa 3",
+"Foque",
+"Tormentín",
+"Ninguna es la correcta"]);
+
+let item6 = new PreguntasyRespuestas(6, "¿Qué es la botavara?", 6, "Palo horizontal unida al mástil por medio del pinzote sobre la que se sujeta el pujamen de una vela", ["Cable sobre el que se enverga la vela proel y que además soporta el palo impidiendo que caiga a popa",
+"Pieza metálica sujeta al casco desde donde se sostiene el obenque",
+"Palo vertical que sostiene la arboladura",
+"Ninguna es la correcta"]);
+
+let item7 = new PreguntasyRespuestas(7, "La capacidad del barco para sostenerse sobre la superficie del agua se denomina…", 7, "Flotabilidad", 
+["Habitabilidad",
+"Navegabilidad",
+"Estabilidad",
+"Ninguna es la correcta"]);
+
+let item8 = new PreguntasyRespuestas(8, "Nombre el aparejo que cuenta con un solo palo y dos velas en proa", 8, "Cutter", 
+["Queche",
+"Yol",
+"Sloop",
+"Ninguna es la correcta"]);
+
+let item9 = new PreguntasyRespuestas(9, '¿A qué refiere el término "jarcia firme"?', 9, "", 
+["Conjunto de cables (estays y obenques) que sostienen el palo del barco",
+"Cabos utilizados para sujetar las velas",
+"Mecanismo que sirve para impedir que la botavara se eleve",
+'Varanda en forma de "V" a proa del barco']);
+
+let item10 = new PreguntasyRespuestas(10, "¿Cómo se llama el nombre del palo a popa del palo mayor en un aparejo Queche?", 10, 
+"Mesana", 
+["Trinquete",
+"Yankee",
+"Cutter",
+"Ninguna es la correcta"]);
+
+let item11 = new PreguntasyRespuestas(11, "Navegando a un descuartelar el barco recibe el viento…", 11, "Entre la amura y el través", 
+["De manera perpendicular a la línea de crujía",
+"Por la popa",
+"Entre el través y la aleta",
+"Ninguna es la correcta"]);
+
+let item12 = new PreguntasyRespuestas(12, "En un spring de proa se amarra el barco", 12, "Desde su proa hacia cornamusa del muelle que se  encuentra a popa del barco", 
+["Desde su popa hacia la cornamusa del muelle que se encuentra a proa del barco",
+"Desde su proa hacia la cornamusa del muelle que se encuentra por delante de la proa del barco",
+"Desde su popa hacia la cornamusa del muelle que se encuentra a por detrás de la popa del barco",
+"Ninguna es la correcta"]);
+
+let item13 = new PreguntasyRespuestas(13, '¿Cuál de los siguientes nudos debo realizar para formara una "gaza"?', 13, "As de guía", 
+["Llano",
+"Ballestrinque",
+"Lasca",
+"Ninguna es la correcta"]);
+
+let item14 = new PreguntasyRespuestas(14, "Seleccione el nombre de la maniobra por la cual la popa del barco atraviesa el eje del viento", 14, "Virar en redondo", 
+["Virar por avante",
+"Bordejear",
+"Derivar",
+"Ninguna es la correcta"]);
+
+let item15 = new PreguntasyRespuestas(15, '¿Qué acción realiza el barco al "orzar"?', 15, "Dirige su proa hacia barlovento", 
+["Dirige su proa hacia sotavento",
+"Cae a babor",
+"Cae a estribor",
+"Ninguna es la correcta"]);
+
+let item16 = new PreguntasyRespuestas(16, "Un chicote es…", 16, "La parte más corta del cabo que se utiliza para hacer un nudo", 
+["Una forma que se realiza sobre un cabo a fin de estibarlo convenientemente",
+"La parte más larga del cabo que no interviene en el nudo",
+"Un lazo cerrado que se obtiene plegando un cabo sobre sí mismo",
+"Ninguna es la correcta"]);
+
+let item17 = new PreguntasyRespuestas(17, "¿Qué quiere decir “filar”?", 17, 'Liberar lentamente la tensión de la "escota" en función de aumentar el ángulo que forma la vela con la línea de crujía', 
+["Jalar de la ”escota” para disminuir el ángulo que forma la vela con la línea de crujía",
+"Jalar de la “driza” de la vela para izarla a tope",
+"Soltar la “driza” a fin que la vela caiga sobre cubierta",
+"Ninguna es la correcta"]);
+
+let item18 = new PreguntasyRespuestas(18, "¿En cuál de las siguientes sitaciones una embarcación se encuentra amurada a estribor?", 18, "Cuando recibe el viento por la banda estribor", 
+["Cuando recibe el viento por la banda babor",
+"Cuando recibe el viento por la proa",
+"Cuando recibe el viento por la popa",
+"Ninguna es la correcta"]);
+
+// let item8 = new PreguntasyRespuestas(8, "", 8, "", ["","","",""]);
+// let item8 = new PreguntasyRespuestas(8, "", 8, "", ["","","",""]);
+// let item8 = new PreguntasyRespuestas(8, "", 8, "", ["","","",""]);
+// let item8 = new PreguntasyRespuestas(8, "", 8, "", ["","","",""]);
+
 
 let contenedorItems = [item1,item2,item3,item4,item5,item6,item7];
 
@@ -92,11 +198,18 @@ function seleccionadorRespuestas(cantidadDeRespuestas) {
         let cantidadMaximaRespuestas = contenedorItems[idPregunta].respuestasPosibles.length-1;
 
         let nuevasRespuestas = generarListaNumeros(cantidadDeRespuestas, contenedorItemsPrevio[i].pregunta, 0, cantidadMaximaRespuestas);
+       
 
-        for(let j = 0 ; j < nuevasRespuestas.length; j++) {
-
-            contenedorItemsPrevio[i].respuestas.push(nuevasRespuestas[j]);
+        if(cantidadDeRespuestas > cantidadMaximaRespuestas + 1) {
+            console.log(`El número de respuestas solicitado (${cantidadDeRespuestas}) es mayor a la cantidad de respuestas posibles. Esto ocurrió en la pregunta N° ${contenedorItems[idPregunta].numeroPregunta} `);
+            break;
+        } else {
+            for(let j = 0 ; j < nuevasRespuestas.length; j++) {
+                
+                contenedorItemsPrevio[i].respuestas.push(nuevasRespuestas[j]);
+            }
         }
+        
     }  
 }
 
@@ -246,8 +359,8 @@ function generarExamen(cantidadPreguntas, cantidadRespuestas) {
 
 let cantidadMaximaPreguntas = contenedorItems.length;
 
-let cantidadPreguntas = 4;
-let cantidadRespuestas = 7;
+let cantidadPreguntas = 7;
+let cantidadRespuestas = 4;
 
 generarExamen(cantidadPreguntas, cantidadRespuestas);
 

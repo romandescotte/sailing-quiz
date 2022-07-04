@@ -74,3 +74,28 @@ body {
   background-color: #bc02ff;
   transition: background-color 0.1s ease-in; 
 }
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 15px; 
+  }
+
+  body {
+    padding: 5px 5px;
+  }
+  .seccion_preguntas {
+    padding: 0 0;
+  }
+  .items {
+    margin: 0 0 60px 0;
+    padding: 20px 10px;
+  }
+  .items li:nth-child(2) {
+    margin-top: 20px;
+  }
+  .respuestas {
+    font-size: 1rem;
+    margin-left: 5px;
+    margin-bottom: 20px
+  }
+}

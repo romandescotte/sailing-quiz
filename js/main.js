@@ -273,29 +273,29 @@ function sacaPromedio() {
     
     let sumaRespuestasAcertadas = cuentaRespuestasAcertadas();
 
-    let promedio = (sumaRespuestasAcertadas/cantidadPreguntas).toFixed(2);
+    let promedio = (sumaRespuestasAcertadas/cantidadPreguntas).toFixed(2)*100;
 
     if(promedio > 7 ) {
         console.log(`
         Examen APROBADO. 
         Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 
-        El promedio obtenido es de ${promedio}` 
+        El promedio obtenido es de ${promedio}%` 
         );    
         alert(`
         Examen APROBADO. 
         Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 
-        El promedio obtenido es de ${promedio}` 
+        El promedio obtenido es de ${promedio}%` 
         );
     } else {
         console.log(`
         Examen DESAPROBADO. 
         Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 
-        El promedio obtenido es de ${promedio}` 
+        El promedio obtenido es de ${promedio}%` 
         );    
         alert(`
         Examen DESAPROBADO. 
         Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 
-        El promedio obtenido es de ${promedio}` 
+        El promedio obtenido es de ${promedio}%` 
         );       
     }    
     return promedio;

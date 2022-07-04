@@ -244,7 +244,7 @@ function generarExamen(cantidadPreguntas, cantidadRespuestas) {
 
 let cantidadMaximaPreguntas = contenedorItems.length;
 
-let cantidadPreguntas = 96; //96 maximo
+let cantidadPreguntas = 20; //96 maximo
 let cantidadRespuestas = 4; //si pongo mas de 4 a veces se traba el loop y aveces entra en el if que comprueba si hay respuestas posibles
 
 generarExamen(cantidadPreguntas, cantidadRespuestas);
@@ -265,17 +265,43 @@ function cuentaRespuestasAcertadas() {
             contadorAcertadas++;
         }
     }
-    console.log("Cantidad de respuestas aprobadas: "+ contadorAcertadas);
+    //console.log("Cantidad de respuestas aprobadas: "+ contadorAcertadas);
     return contadorAcertadas;
 }
 
 function sacaPromedio() {
     
     let sumaRespuestasAcertadas = cuentaRespuestasAcertadas();
+
     let promedio = (sumaRespuestasAcertadas/cantidadPreguntas).toFixed(2);
-    console.log("El promedio es: "+promedio);
+
+    if(promedio > 7 ) {
+        console.log(`
+        Examen APROBADO. 
+        Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 
+        El promedio obtenido es de ${promedio}` 
+        );    
+        alert(`
+        Examen APROBADO. 
+        Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 
+        El promedio obtenido es de ${promedio}` 
+        );
+    } else {
+        console.log(`
+        Examen DESAPROBADO. 
+        Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 
+        El promedio obtenido es de ${promedio}` 
+        );    
+        alert(`
+        Examen DESAPROBADO. 
+        Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 
+        El promedio obtenido es de ${promedio}` 
+        );       
+    }    
     return promedio;
 }
+
+
 
 $botonCorregir.addEventListener('click', sacaPromedio);
 

@@ -269,37 +269,84 @@ function cuentaRespuestasAcertadas() {
     return contadorAcertadas;
 }
 
+function devolverRespuestasEquivocadas() {
+
+    let respuestasIncorrectas = [];
+    for(let i = 1 ; i <= cantidadPreguntas; i++) {        
+        
+        let string = document.querySelector('#form_preguntas')["name_input_"+i];       
+        let $respuestas = string.value;        
+        let nroPregunta= contenedorItemsExamen[i-1].pregunta;
+        if($respuestas !== contenedorItems[nroPregunta].textoRespuestaCorrecta) {
+            respuestasIncorrectas.push(i);
+        }
+    }
+    return respuestasIncorrectas;
+
+}
+
+function devolverRespuestasCorregidas() {
+
+    let respuestasCorregidas = [];
+
+    for(let i = 1 ; i <= cantidadPreguntas; i++) {        
+        
+        let string = document.querySelector('#form_preguntas')["name_input_"+i];       
+        let $respuestas = string.value;        
+        let nroPregunta= contenedorItemsExamen[i-1].pregunta;
+        if($respuestas !== contenedorItems[nroPregunta].textoRespuestaCorrecta) {
+           
+            respuestasCorregidas.push(contenedorItems[nroPregunta].textoPregunta);
+            respuestasCorregidas.push(contenedorItems[nroPregunta].textoRespuestaCorrecta);
+        }
+    }
+    
+    return respuestasCorregidas;
+}
+
 function sacaPromedio() {
     
     let sumaRespuestasAcertadas = cuentaRespuestasAcertadas();
 
     let promedio = (sumaRespuestasAcertadas/cantidadPreguntas).toFixed(2)*100;
-
+    let respuestasEquivocadas = devolverRespuestasEquivocadas();
+    let respuestasCorregidas = devolverRespuestasCorregidas();
     if(promedio > 7 ) {
         console.log(`
         Examen APROBADO. 
         Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 
-        El promedio obtenido es de ${promedio}%` 
+        El promedio obtenido es de ${promedio}%
+        Las respuestas incorrectas son: ${respuestasEquivocadas}
+        Las respuestas corregidas son: ${respuestasCorregidas}` 
         );    
         alert(`
         Examen APROBADO. 
         Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 
-        El promedio obtenido es de ${promedio}%` 
+        El promedio obtenido es de ${promedio}%
+        Las respuestas incorrectas son: ${respuestasEquivocadas}
+        Las respuestas corregidas son: ${respuestasCorregidas}` 
         );
     } else {
         console.log(`
         Examen DESAPROBADO. 
         Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 
-        El promedio obtenido es de ${promedio}%` 
+        El promedio obtenido es de ${promedio}%
+        Las respuestas incorrectas son: ${respuestasEquivocadas}
+        Las respuestas corregidas son: ${respuestasCorregidas}` 
         );    
         alert(`
         Examen DESAPROBADO. 
         Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 
-        El promedio obtenido es de ${promedio}%` 
+        El promedio obtenido es de ${promedio}%
+        Las respuestas incorrectas son: ${respuestasEquivocadas}
+        Las respuestas corregidas son: ${respuestasCorregidas}` 
         );       
     }    
+    
     return promedio;
 }
+
+
 
 
 

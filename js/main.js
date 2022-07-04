@@ -146,8 +146,12 @@ function muestraItemsExamen() {
         //Setea atributos        
         let ul_id = `ul_pregunta_${contadorId1}`;
         $crea_ul.setAttribute("id", ul_id);
+        $crea_ul.classList.add('items');
         let h3_id = `h3_pregunta_${contadorId1}`;
-        $crea_h3.setAttribute("id", h3_id);                            
+        $crea_h3.setAttribute("id", h3_id); 
+        $crea_h3.classList.add('titulo-pregunta');
+        
+
 
         //Se selecciona el elemento variable            
         let $h3 = document.querySelector(`h3[id="h3_pregunta_${contadorId1}"]`);
@@ -196,6 +200,7 @@ function muestraItemsExamen() {
             let input_value = texto_respuestas;                        
 
             $crea_li.setAttribute("id", li_id);
+            $crea_li.classList.add('respuestas');
             $crea_inputRadio.setAttribute("id", input_id);
             $crea_inputRadio.setAttribute("type","radio");
             $crea_inputRadio.setAttribute("name", input_name);
@@ -212,7 +217,10 @@ function muestraItemsExamen() {
             let $nodo_respuesta = document.createTextNode(texto_respuestas);
 
             //Se adjunta el nodo al elemento.
-            $label.appendChild($nodo_respuesta);            
+            $label.appendChild($nodo_respuesta); 
+            $crea_li.appendChild($crea_inputRadio);   
+            $crea_li.appendChild($crea_label);
+
         }
     }
 }

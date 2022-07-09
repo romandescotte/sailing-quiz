@@ -311,7 +311,7 @@ function sacaPromedio() {
     let promedio = (sumaRespuestasAcertadas/cantidadPreguntas).toFixed(2)*100;
     let respuestasEquivocadas = devolverRespuestasEquivocadas();
     let respuestasCorregidas = devolverRespuestasCorregidas();
-    if(promedio > 7 ) {
+    if(promedio > 70 ) {
         console.log(`
         Examen APROBADO. 
         Cantidad de respuestas aprobadas: ${sumaRespuestasAcertadas}. 

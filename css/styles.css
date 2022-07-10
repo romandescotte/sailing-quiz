@@ -11,12 +11,14 @@ h1 {
 }
 
 body {
+  position: relative;
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   padding: 50px 20px;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
+  z-index: -1;
 }
 
 .seccion_preguntas {
@@ -35,10 +37,9 @@ body {
 .items {
   margin: 0 0 120px 0;
   padding: 60px 80px;
-  background-color: rgb(236, 236, 236);
+  background-color: #ececec;
   border-radius: 10px;
-  box-shadow: 0px 3px 11px -5px #919191
-
+  box-shadow: 0px 3px 11px -5px #919191;
 }
 
 .respuestas {
@@ -60,8 +61,8 @@ body {
 }
 
 #boton-corregir {
-  font-size: 1.3rem;
-  background-color: #bf38f0;
+  font-size: 1rem;
+  background-color: #bc24f3;
   color: white;
   padding: 15px 20px;
   border-radius: 5px;
@@ -71,8 +72,60 @@ body {
 }
 
 #boton-corregir:hover {
-  background-color: #bc02ff;
+  background-color: #c442f3;
   transition: background-color 0.1s ease-in; 
+}
+
+.popup-container {
+  display: flex;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+  opacity: 0;
+  transition: visibility 0.7s, opacity 0.6s ease-out;
+}
+
+.correccion-popup {  
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;  
+  background-color: #ececec; 
+  top: 25vh;  
+  padding: 80px 70px 40px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 500px 200px #d5d5d5; 
+  z-index: 1;   
+}
+
+.correccion-popup p {
+  display: flex;
+  align-self: center;
+}
+
+.fadein {
+  opacity: 100;
+  visibility: visible;
+  transition: opacity 1s cubic-bezier(0.27, 0.68, 0.47, 0.99);
+}
+
+#btn-cerrar {
+  font-size: 1rem;
+  background-color: #5d77eb;
+  color: white;
+  padding: 10px 10px;
+  margin: 40px 0 0 0;
+  border-radius: 5px;
+  border: 0px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 0px #919191;
+  align-self: center;
+}
+
+#btn-cerrar:hover {  
+  background-color: #6f84e2;  
 }
 
 @media screen and (max-width: 700px) {

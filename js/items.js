@@ -1,8 +1,8 @@
-function PreguntasyRespuestas(numeroPregunta, textoPregunta, numeroRespuestaCorrecta, textoRespuestaCorrecta, respuestasPosibles) {
+function PreguntasyRespuestas(preguntaId, textoPregunta, respuestaCorrectaId, textoRespuestaCorrecta, respuestasPosibles) {
     
-  this.numeroPregunta = numeroPregunta;
+  this.preguntaId = preguntaId;
   this.textoPregunta = textoPregunta;
-  this.numeroRespuestaCorrecta = numeroRespuestaCorrecta;
+  this.respuestaCorrectaId = respuestaCorrectaId;
   this.textoRespuestaCorrecta = textoRespuestaCorrecta;    
   this.respuestasPosibles = respuestasPosibles;
 }      
@@ -359,8 +359,12 @@ let item59 = new PreguntasyRespuestas(59, "¿Qué instrumental utilizamos para c
 "El escandallo",
 "Ninguna es la correcta"]);
 
-//calcular y agregar
-// let item60 = new PreguntasyRespuestas(60, "Si la carta náutica informa para el año 2020: 5° 26' W 2003 (3' W). La declinacion magnética es...", 60, "", ["","","",""]);
+
+let item60 = new PreguntasyRespuestas(60, "Tomando como referencia el año 2021, seleccione la declinación magnética (aproximada y redondeando al menor número) si vemos en el carta náutica los siguientes datos: 8° 25' W 2014 (8' W)", 60, "9°", 
+["7°",
+"10°",
+"9,2°",
+"Ninguna es la correcta"]);
 
 let item61 = new PreguntasyRespuestas(61, "¿Desde que línea contamos la longitud?", 61, "Meridiano de Greenwich", 
 ["Paralelo del observador",
@@ -579,7 +583,7 @@ let item97 = new PreguntasyRespuestas(97, "Todo buque está obligado a mantener 
 
 
 
-export let contenedorItems = [
+let contenedorItems = [
   item1,
   item2,
   item3,
@@ -639,7 +643,7 @@ export let contenedorItems = [
   item57,
   item58,
   item59,
-  //item60,
+  item60,
   item61,
   item62,
   item63,
@@ -678,3 +682,5 @@ export let contenedorItems = [
   item96,
   item97,
 ];
+
+export { contenedorItems }

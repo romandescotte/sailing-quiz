@@ -8,18 +8,27 @@
     <link rel="stylesheet" href="./css/normalize.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<script src="https://kit.fontawesome.com/fafa67670d.js" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 	<body>
-		<h1>Sailing Quiz !</h1>
+		<h1>Sailing Quiz !</h1>		
 		<div class="seccion_preguntas">
-			<div id="preguntas">
+			<div id="preguntas">				
+				<i class="fa-regular fa-sailboat"></i>
+				<i class="fa-solid fa-sailboat"></i>				
 				<form id="form_preguntas" action="#">													
 				</form>				
 				<button type="button" id="boton-corregir"><a>Corregir</a></button>
-			</div>
+			</div>			
 		</div>
+		<div class="popup-container">
+			<div class="correccion-popup">				
+				<p id="parrafo-correccion"></p>				
+				<button id="btn-cerrar">Cerrar</button>
+			</div>
+		</div>	
 	<script type="module" src="./js/main.js"></script>	
-	</body>
+	</body>	
 </html>

@@ -7,25 +7,25 @@ function PreguntasyRespuestas(preguntaId, textoPregunta, respuestaCorrectaId, te
   this.respuestasPosibles = respuestasPosibles;
 }      
   
-let item1 = new PreguntasyRespuestas(1, "¿Qué son los baos?", 1, "Vigas que en unión con las cuadernas conforman el soporte de la cubierta", 
+let item1 = new PreguntasyRespuestas(98, "¿Qué son los baos?", 98, "Vigas que en unión con las cuadernas conforman el soporte de la cubierta", 
 ["Piezas robustas que continúa a la quilla y terminan el buque por la popa",
 "Piezas que continúan la quilla en el extremo de proa de la embarcación",
 "Canto superior del costado de un buque", 
 "Ninguna es la correcta"]);
 
-let item2 = new PreguntasyRespuestas(2, "¿Cuál es el puño de amura?", 2, "El puño comprendido entre el pujamen y el gratil", 
+let item2 = new PreguntasyRespuestas(99, "¿Cuál es el puño de amura?", 99, "El puño comprendido entre el pujamen y el gratil", 
 ["Puño al que se le sujeta la driza",
 "El puño comprendido entre la baluma y el gratil",
 "Puño inferior en el que se afirma la escota",
 "Ninguna es la correcta"]);
 
-let item3 = new PreguntasyRespuestas(3, "¿Qué es la carlinga?", 3, "Herraje en donde encaja el pie del mástil", 
+let item3 = new PreguntasyRespuestas(100, "¿Qué es la carlinga?", 100, "Herraje en donde encaja el pie del mástil", 
 ["Orificio de la cubierta por el cual se erige el mástil, cuando éste es pasante",
 "Cable que sostiene el palo lateralmente y hacia popa",
 "Mecanismo que sirve para impedir que la botavara se eleve por efecto del viento",
 "Ninguna es la correcta"]);
 
-let item4 = new PreguntasyRespuestas(4, "¿Qué son las relingas?", 4, "Cabos que refuerzan el borde de algunas velas y facilitan su inserción en la ranura del mástil o botavara", 
+let item4 = new PreguntasyRespuestas(101, "¿Qué son las relingas?", 101, "Cabos que refuerzan el borde de algunas velas y facilitan su inserción en la ranura del mástil o botavara", 
 ["Orificios practicados en las velas que sirven para reducir la superficie vélica",
 "Refuerzos insertados en la vela que sirven para sostener la baluma y darle forma",
 "Ojales metálicos por donde se pasan los cabos de las velas",

@@ -12,7 +12,7 @@ function cuentaRespuestasAcertadas() {
         let string = document.querySelector('#form_preguntas')["name_input_"+i];       
         let $respuestas = string.value;
         // console.log($respuestas);
-        let nroPregunta= contenedorItemsExamen[i-1].pregunta;
+        let nroPregunta= contenedorItemsExamen[i-1].preguntaId;
         if($respuestas === contenedorItems[nroPregunta].textoRespuestaCorrecta) {
             contadorAcertadas++;
         }
@@ -27,7 +27,7 @@ function devolverRespuestasIncorrectas(cantidadPreguntas) {
     for(let i = 1 ; i <= cantidadPreguntas; i++) {        
         
         let textoRespuestaUsuario = document.querySelector('#form_preguntas')["name_input_"+i].value; 
-        let nroPregunta= contenedorItemsExamen[i-1].pregunta;
+        let nroPregunta= contenedorItemsExamen[i-1].preguntaId;
         if(textoRespuestaUsuario !== contenedorItems[nroPregunta].textoRespuestaCorrecta) {
             respuestasIncorrectasId.push(i);
         }
@@ -44,7 +44,7 @@ function devolverRespuestasCorregidas() {
         
         let textoRespuestaUsuario = document.querySelector('#form_preguntas')["name_input_"+i].value;       
              
-        let preguntaId = contenedorItemsExamen[i-1].pregunta;
+        let preguntaId = contenedorItemsExamen[i-1].preguntaId;
         if(textoRespuestaUsuario !== contenedorItems[preguntaId].textoRespuestaCorrecta) {
            
             respuestasCorregidas.push(contenedorItems[preguntaId].textoPregunta);

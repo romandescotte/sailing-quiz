@@ -21,38 +21,47 @@ function cuentaRespuestasAcertadas() {
     return contadorAcertadas;
 }
 
-function devolverRespuestasIncorrectas(cantidadPreguntas) {
+function marcaRespuestasIncorrectas(cantidadPreguntas) {
 
-    let respuestasIncorrectasId = [];
-    for(let i = 1 ; i <= cantidadPreguntas; i++) {        
+    for(let i = 1 ; i <= cantidadPreguntas; i++) {
         
-        let textoRespuestaUsuario = document.querySelector('#form_preguntas')["name_input_"+i].value; 
-        let nroPregunta= contenedorItemsExamen[i-1].preguntaId;
-        if(textoRespuestaUsuario !== contenedorItems[nroPregunta].textoRespuestaCorrecta) {
-            respuestasIncorrectasId.push(i);
+        let $ul = document.querySelector('#form_preguntas')["name_input_"+i];       
+        let respuestaUsuario = $ul.value;
+       
+        let nroPregunta = contenedorItemsExamen[i-1].preguntaId;
+        if(respuestaUsuario !== contenedorItems[nroPregunta].textoRespuestaCorrecta) {
+            
+            let cantidadRespuestas = document.examen.querySelectorAll(`.items .respuestas`).length; 
+            for(let j = 1; j <= cantidadRespuestas; j++) {
+                
+                let seleccionado = document.examen.querySelector(`#input_respuesta_${j}`).checked;
+
+                if(seleccionado) {
+
+                    let $label = document.examen.querySelector(`#li_respuesta_${j} #id_label_${j}`);
+                    $label.classList.contains('incorrecta') ? '' : $label.classList.add('incorrecta');
+                }
+            }
         }
-    }
-    // console.log(respuestasIncorrectasId);
-    return respuestasIncorrectasId;
+    }   
 }
 
-function devolverRespuestasCorregidas() {
+function marcaRespuestasCorregidas(cantidadPreguntas) {
 
-    let respuestasCorregidas = [];
-
-    for(let i = 1 ; i <= cantidadPreguntas; i++) {        
+    for(let i = 1 ; i <= cantidadPreguntas; i++) {
         
-        let textoRespuestaUsuario = document.querySelector('#form_preguntas')["name_input_"+i].value;       
-             
-        let preguntaId = contenedorItemsExamen[i-1].preguntaId;
-        if(textoRespuestaUsuario !== contenedorItems[preguntaId].textoRespuestaCorrecta) {
-           
-            respuestasCorregidas.push(contenedorItems[preguntaId].textoPregunta);
-            respuestasCorregidas.push(contenedorItems[preguntaId].textoRespuestaCorrecta);
+        let $ul = document.querySelector('#form_preguntas')["name_input_"+i];       
+        let respuestaUsuario = $ul.value;
+        let nroPregunta = contenedorItemsExamen[i-1].preguntaId;
+
+        let respuestaCorrecta = contenedorItems[nroPregunta].textoRespuestaCorrecta;
+        if(respuestaUsuario !== respuestaCorrecta) {
+
+            let cantidadRespuestas = document.examen.querySelectorAll(`.items .respuestas`).length;
+            let $respuestaCorrecta = document.examen.querySelector(`[value="${respuestaCorrecta}"] + label`);
+            !$respuestaCorrecta.classList.contains('corregida') ? $respuestaCorrecta.classList.add('corregida') : '';
         }
     }
-    
-    return respuestasCorregidas;
 }
 
 function sacaPromedio() {
@@ -83,8 +92,7 @@ function ocultaPopUp() {
 
 function corregirExamen() {
     const promedio = sacaPromedio();
-    // const numeroPreguntaIncorrecta = devolverRespuestasEquivocadas();
-    const respuestasCorregidas = devolverRespuestasCorregidas();
+    
     let estadoExamen = false;
     if(promedio > 70) {
         estadoExamen = true;
@@ -93,8 +101,8 @@ function corregirExamen() {
     muestraPopUp(promedio, estadoExamen);
     const $botonCerrar = document.querySelector('#btn-cerrar');
     $botonCerrar.addEventListener('click', ocultaPopUp);
-    devolverRespuestasIncorrectas(cantidadPreguntas);
-
+    marcaRespuestasIncorrectas(cantidadPreguntas);
+    marcaRespuestasCorregidas(cantidadPreguntas);
 }
 
 export { corregirExamen }

@@ -1,37 +1,10 @@
 import { contenedorItems } from "./items.js";
 
-let cantidadMaximaPreguntas = contenedorItems.length;
 let contenedorItemsPrevio = [];
 let contenedorItemsExamen = [];
-
-function generarListaNumeros(cantidad, numeroPreexistente, desdeNumero, hastaNumero) {        
-    
-  let listaNumeros = [];
-  listaNumeros.push(numeroPreexistente);   
-
-  if(listaNumeros[0] === undefined ) {
-    listaNumeros.pop();
-  }   
-	
-	while(listaNumeros.length < cantidad) {		
-
-		let numeroAleatorio = generarNumeroAleatorio(desdeNumero, hastaNumero);	
-		
-		let numeroExistente = listaNumeros.some(numero => numero === numeroAleatorio);      
-
-		if(!numeroExistente) {
-      listaNumeros.push(numeroAleatorio)
-    } 
-  }
-  return listaNumeros;
-}  
-
-function generarNumeroAleatorio(desdeNumero, hastaNumero) {			
-  return Math.floor(Math.random() * (hastaNumero - desdeNumero + 1) + desdeNumero); //desdeNumero y hastNumero son inclusivos 
-}
+let cantidadMaximaPreguntas = contenedorItems.length;
 
 function ItemsPrevio(preguntaId) {
-
   this.preguntaId = preguntaId;    
   this.respuestas = [];
 }
@@ -41,7 +14,25 @@ function ItemsExamen(preguntaId) {
 	this.respuestas = []
 }
 
+function generarExamen(cantidadPreguntas, cantidadRespuestas) {
+
+  chequeaItems();
+
+	if(cantidadPreguntas <= cantidadMaximaPreguntas) {
+
+		seleccionadorPreguntas(cantidadPreguntas);
+    seleccionadorRespuestas(cantidadRespuestas);
+    console.log(contenedorItemsPrevio);
+    mezclaRespuestas(0,cantidadRespuestas-1);
+    console.log("contenedorItemsExamen: ",contenedorItemsExamen);
+    muestraItemsExamen();		
+	} else {  
+    alert("El número requerido de preguntas a mostrar es mayor a la cantidad de preguntas disponibles");
+	}
+}
+
 function seleccionadorPreguntas(cantidadDePreguntas) {    
+
   let preguntasSeleccionadas = generarListaNumeros(cantidadDePreguntas, undefined, 0, cantidadMaximaPreguntas-1);    
   for(let i = 0; i < preguntasSeleccionadas.length; i++) {
     contenedorItemsPrevio.push(new ItemsPrevio(preguntasSeleccionadas[i]));        
@@ -58,8 +49,10 @@ function seleccionadorRespuestas(cantidadDeRespuestas) {
 
     let idPregunta = contenedorItemsPrevio[i].preguntaId;            
             
-    let cantidadMaximaRespuestas = contenedorItems[idPregunta].respuestasPosibles.length;        
-    //fuerza idPregunta como parametro de numeroPreExistente para que no meta dos veces la misma respuesta
+    let cantidadMaximaRespuestas = contenedorItems[idPregunta].respuestasPosibles.length;  
+    
+    // console.log('respuestas correctas: ', seleccionadorRespuestaCorrecta(i));
+
     let respuestasId = generarListaNumeros(cantidadDeRespuestas, idPregunta, 0, cantidadMaximaRespuestas-1);       
 
     let limiteRespuestasMaximasRoto = chequearCantidadMaximaRespuestas(cantidadDeRespuestas, cantidadMaximaRespuestas, idPregunta);
@@ -76,6 +69,13 @@ function seleccionadorRespuestas(cantidadDeRespuestas) {
   }   
   console.log('Respuestas seleccionadas: ', respuestasSeleccionadas);
   return respuestasSeleccionadas; 
+}
+
+function seleccionadorRespuestaCorrecta(i) {
+  
+  let idPregunta = contenedorItemsPrevio[i].preguntaId;    
+  contenedorItemsPrevio[i].respuestas.push(idPregunta);
+  return contenedorItemsPrevio;
 }
 
 function mezclaRespuestas(desdeNumero, hastaNumero) {
@@ -205,21 +205,30 @@ function muestraItemsExamen() {
   }
 }
 
-function generarExamen(cantidadPreguntas, cantidadRespuestas) {
+function generarListaNumeros(cantidad, numeroPreexistente, desdeNumero, hastaNumero) {        
+    
+  let listaNumeros = [];
+  listaNumeros.push(numeroPreexistente);   
 
-  chequeaItems();
+  if(listaNumeros[0] === undefined ) {
+    listaNumeros.pop();
+  }   
+	
+	while(listaNumeros.length < cantidad) {		
 
-	if(cantidadPreguntas <= cantidadMaximaPreguntas) {
+		let numeroAleatorio = generarNumeroAleatorio(desdeNumero, hastaNumero);	
+		
+		let numeroExistente = listaNumeros.some(numero => numero === numeroAleatorio);      
 
-		seleccionadorPreguntas(cantidadPreguntas);
-    seleccionadorRespuestas(cantidadRespuestas);
-    console.log(contenedorItemsPrevio);
-    mezclaRespuestas(0,cantidadRespuestas-1);
-    console.log("contenedorItemsExamen: ",contenedorItemsExamen);
-    muestraItemsExamen();		
-	} else {  
-    alert("El número requerido de preguntas a mostrar es mayor a la cantidad de preguntas disponibles");
-	}
+		if(!numeroExistente) {
+      listaNumeros.push(numeroAleatorio)
+    } 
+  }
+  return listaNumeros;
+}  
+
+function generarNumeroAleatorio(desdeNumero, hastaNumero) {			
+  return Math.floor(Math.random() * (hastaNumero - desdeNumero + 1) + desdeNumero); //desdeNumero y hastNumero son inclusivos 
 }
 
 function chequeaItems() {

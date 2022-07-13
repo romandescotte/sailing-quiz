@@ -25,42 +25,24 @@ function marcaRespuestasIncorrectas(cantidadPreguntas) {
 
     for(let i = 1 ; i <= cantidadPreguntas; i++) {
         
-        let $ul = document.querySelector('#form_preguntas')["name_input_"+i];       
-        let respuestaUsuario = $ul.value;
-       
-        let nroPregunta = contenedorItemsExamen[i-1].preguntaId;
-        if(respuestaUsuario !== contenedorItems[nroPregunta].textoRespuestaCorrecta) {
-            
-            let cantidadRespuestas = document.examen.querySelectorAll(`.items .respuestas`).length; 
-            for(let j = 1; j <= cantidadRespuestas; j++) {
-                
-                let seleccionado = document.examen.querySelector(`#input_respuesta_${j}`).checked;
-
-                if(seleccionado) {
-
-                    let $label = document.examen.querySelector(`#li_respuesta_${j} #id_label_${j}`);
-                    $label.classList.contains('incorrecta') ? '' : $label.classList.add('incorrecta');
-                }
-            }
+        let $radioButton = document.examen["name_input_"+i];       
+        let respuestaUsuario = $radioButton.value;       
+        let nroPregunta = contenedorItemsExamen[i-1].preguntaId;        
+        if(respuestaUsuario !== contenedorItems[nroPregunta].textoRespuestaCorrecta) {  
+            let $label = document.querySelector(`[name='name_input_${i}'][value='${respuestaUsuario}'] + label`);
+            !$label.classList.contains('incorrecta') ? $label.classList.add('incorrecta') : '' ;                        
         }
     }   
 }
 
-function marcaRespuestasCorregidas(cantidadPreguntas) {
+function marcaRespuestasCorrectas(cantidadPreguntas) {
 
     for(let i = 1 ; i <= cantidadPreguntas; i++) {
-        
-        let $ul = document.querySelector('#form_preguntas')["name_input_"+i];       
-        let respuestaUsuario = $ul.value;
+
         let nroPregunta = contenedorItemsExamen[i-1].preguntaId;
-
-        let respuestaCorrecta = contenedorItems[nroPregunta].textoRespuestaCorrecta;
-        if(respuestaUsuario !== respuestaCorrecta) {
-
-            let cantidadRespuestas = document.examen.querySelectorAll(`.items .respuestas`).length;
-            let $respuestaCorrecta = document.examen.querySelector(`[value="${respuestaCorrecta}"] + label`);
-            !$respuestaCorrecta.classList.contains('corregida') ? $respuestaCorrecta.classList.add('corregida') : '';
-        }
+        let respuestaCorrecta = contenedorItems[nroPregunta].textoRespuestaCorrecta;           
+        let $respuestaCorrecta = document.examen.querySelector(`[value="${respuestaCorrecta}"] + label`);
+        !$respuestaCorrecta.classList.contains('corregida') ? $respuestaCorrecta.classList.add('corregida') : '';         
     }
 }
 
@@ -102,7 +84,7 @@ function corregirExamen() {
     const $botonCerrar = document.querySelector('#btn-cerrar');
     $botonCerrar.addEventListener('click', ocultaPopUp);
     marcaRespuestasIncorrectas(cantidadPreguntas);
-    marcaRespuestasCorregidas(cantidadPreguntas);
+    marcaRespuestasCorrectas(cantidadPreguntas);
 }
 
 export { corregirExamen }

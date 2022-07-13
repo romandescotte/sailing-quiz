@@ -27,10 +27,10 @@ function marcaRespuestasIncorrectas(cantidadPreguntas) {
         
         let $radioButton = document.examen["name_input_"+i];       
         let respuestaUsuario = $radioButton.value;       
-        let nroPregunta = contenedorItemsExamen[i-1].preguntaId;        
-        if(respuestaUsuario !== contenedorItems[nroPregunta].textoRespuestaCorrecta) {  
-            let $label = document.querySelector(`[name='name_input_${i}'][value='${respuestaUsuario}'] + label`);
-            !$label.classList.contains('incorrecta') ? $label.classList.add('incorrecta') : '' ;                        
+        let nroPregunta = contenedorItemsExamen[i-1].preguntaId;   
+        let $labelSeleccionado = document.querySelector(`[name="name_input_${i}"][value="${respuestaUsuario}"] + label`);     
+        if($labelSeleccionado && respuestaUsuario !== contenedorItems[nroPregunta].textoRespuestaCorrecta) {
+            !$labelSeleccionado.classList.contains('incorrecta') ? $labelSeleccionado.classList.add('incorrecta') : '' ;
         }
     }   
 }
@@ -41,7 +41,7 @@ function marcaRespuestasCorrectas(cantidadPreguntas) {
 
         let nroPregunta = contenedorItemsExamen[i-1].preguntaId;
         let respuestaCorrecta = contenedorItems[nroPregunta].textoRespuestaCorrecta;           
-        let $respuestaCorrecta = document.examen.querySelector(`[value="${respuestaCorrecta}"] + label`);
+        let $respuestaCorrecta = document.examen.querySelector(`[name='name_input_${i}'][value="${respuestaCorrecta}"] + label`);
         !$respuestaCorrecta.classList.contains('corregida') ? $respuestaCorrecta.classList.add('corregida') : '';         
     }
 }

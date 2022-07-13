@@ -22,9 +22,9 @@ function generarExamen(cantidadPreguntas, cantidadRespuestas) {
 
 		seleccionadorPreguntas(cantidadPreguntas);
     seleccionadorRespuestas(cantidadRespuestas);
-    console.log(contenedorItemsPrevio);
+    // console.log(contenedorItemsPrevio);
     mezclaRespuestas(0,cantidadRespuestas-1);
-    console.log("contenedorItemsExamen: ",contenedorItemsExamen);
+    // console.log("contenedorItemsExamen: ",contenedorItemsExamen);
     muestraItemsExamen();		
 	} else {  
     alert("El número requerido de preguntas a mostrar es mayor a la cantidad de preguntas disponibles");
@@ -37,7 +37,7 @@ function seleccionadorPreguntas(cantidadDePreguntas) {
   for(let i = 0; i < preguntasSeleccionadas.length; i++) {
     contenedorItemsPrevio.push(new ItemsPrevio(preguntasSeleccionadas[i]));        
   }    
-  console.log(preguntasSeleccionadas)
+  // console.log(preguntasSeleccionadas)
   return preguntasSeleccionadas; 
 }
 
@@ -67,7 +67,7 @@ function seleccionadorRespuestas(cantidadDeRespuestas) {
       }
     } 
   }   
-  console.log('Respuestas seleccionadas: ', respuestasSeleccionadas);
+  // console.log('Respuestas seleccionadas: ', respuestasSeleccionadas);
   return respuestasSeleccionadas; 
 }
 

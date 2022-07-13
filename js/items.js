@@ -54,11 +54,11 @@ let item8 = new PreguntasyRespuestas(8, "Nombre el aparejo que cuenta con un sol
 "Sloop",
 "Ninguna es la correcta"]);
 
-let item9 = new PreguntasyRespuestas(9, '¿A qué refiere el término "jarcia firme"?', 9, "Conjunto de cables (estays y obenques) que sostienen el palo del barco", 
+let item9 = new PreguntasyRespuestas(9, "¿A qué refiere el término jarcia firme?", 9, "Conjunto de cables (estays y obenques) que sostienen el palo del barco", 
 ["Ninguna es la correcta",
 "Cabos utilizados para sujetar las velas",
 "Mecanismo que sirve para impedir que la botavara se eleve",
-'Varanda en forma de "V" a proa del barco']);
+"Varanda en forma de V a proa del barco"]);
 
 let item10 = new PreguntasyRespuestas(10, "¿Cómo se llama el nombre del palo a popa del palo mayor en un aparejo Queche?", 10, 
 "Mesana", 
@@ -79,7 +79,7 @@ let item12 = new PreguntasyRespuestas(12, "En un spring de proa se amarra el bar
 "Desde su popa hacia la cornamusa del muelle que se encuentra a por detrás de la popa del barco",
 "Ninguna es la correcta"]);
 
-let item13 = new PreguntasyRespuestas(13, '¿Cuál de los siguientes nudos debo realizar para formara una "gaza"?', 13, "As de guía", 
+let item13 = new PreguntasyRespuestas(13, "¿Cuál de los siguientes nudos debo realizar para formara una gaza?", 13, "As de guía", 
 ["Llano",
 "Ballestrinque",
 "Lasca",
@@ -91,7 +91,7 @@ let item14 = new PreguntasyRespuestas(14, "Seleccione el nombre de la maniobra p
 "Derivar",
 "Ninguna es la correcta"]);
 
-let item15 = new PreguntasyRespuestas(15, '¿Qué acción realiza el barco al "orzar"?', 15, "Dirige su proa hacia barlovento", 
+let item15 = new PreguntasyRespuestas(15, "¿Qué acción realiza el barco al orzar?", 15, "Dirige su proa hacia barlovento", 
 ["Dirige su proa hacia sotavento",
 "Cae a babor",
 "Cae a estribor",
@@ -103,7 +103,7 @@ let item16 = new PreguntasyRespuestas(16, "Un chicote es…", 16, "La parte más
 "Un lazo cerrado que se obtiene plegando un cabo sobre sí mismo",
 "Ninguna es la correcta"]);
 
-let item17 = new PreguntasyRespuestas(17, "¿Qué quiere decir “filar”?", 17, 'Liberar lentamente la tensión de la "escota" en función de aumentar el ángulo que forma la vela con la línea de crujía', 
+let item17 = new PreguntasyRespuestas(17, "¿Qué quiere decir “filar”?", 17, "Liberar lentamente la tensión de la escota en función de aumentar el ángulo que forma la vela con la línea de crujía", 
 ["Jalar de la ”escota” para disminuir el ángulo que forma la vela con la línea de crujía",
 "Jalar de la “driza” de la vela para izarla a tope",
 "Soltar la “driza” a fin que la vela caiga sobre cubierta",
@@ -139,7 +139,7 @@ let item22 = new PreguntasyRespuestas(22, "¿Qué causa la explosión en un moto
 "El combustible sobrecalentado a causa de la comprensión",
 "Ninguna es la correcta"]);
 
-let item23 = new PreguntasyRespuestas(23, '¿Cuál es el comportamiento de la hélice "dextrógira"?', 23, "Gira en sentido horario cuando la embarcación avanza", 
+let item23 = new PreguntasyRespuestas(23, "¿Cuál es el comportamiento de la hélice dextrógira?", 23, "Gira en sentido horario cuando la embarcación avanza", 
 ["Gira en sentido antihorario siempre",
 "Gira en sentido horario siempre",
 "Gira en sentido horario cuando la embarcación retrocede",
@@ -157,19 +157,19 @@ let item25 = new PreguntasyRespuestas(25, "¿Cuál es la forma correcta de atrac
 "De popa al muelle",
 "Ninguna es la correcta"]);
 
-let item26 = new PreguntasyRespuestas(26, '¿Qué es un incendio clase "A"?', 26, "El que se origina en sustancia sólidas", 
+let item26 = new PreguntasyRespuestas(26, "¿Qué es un incendio clase A?", 26, "El que se origina en sustancia sólidas", 
 ["El originado en circuitos eléctricos",
 "El que se origina en sustancias líquidas o gaseosas",
 "El originado por la combinación de determinados compuestos químicos",
 "Ninguna es la correcta"]);
 
-let item27 = new PreguntasyRespuestas(27, '¿A qué se llama "capear a palo seco"?', 27, "Maniobra en la cual se arrían todas las velas dejando el barco a la deriva", 
+let item27 = new PreguntasyRespuestas(27, "¿A qué se llama capear a palo seco?", 27, "Maniobra en la cual se arrían todas las velas dejando el barco a la deriva", 
 ["Maniobra por la cual la embarcación se coloca a la “capa” acuartelando el foque con el timón a sotavento",
 "Maniobra en la cual se navega a favor del temporal",
 "Maniobra en la cual se utiliza el “ancla de mar",
 "Ninguna es la correcta"]);
 
-let item28 = new PreguntasyRespuestas(28, '¿En qué situación se recomienda el remolque por largo?', 28, "Cuando se necesita remolcar una embarcación en mar abierto", 
+let item28 = new PreguntasyRespuestas(28, "¿En qué situación se recomienda el remolque por largo?", 28, "Cuando se necesita remolcar una embarcación en mar abierto", 
 ["Cuando se necesita remolcar una embarcación en lugares pequeños",
 "Cuando la embarcación a remolcar es chica",
 "Cuando la embarcación a remolcar es grande",
@@ -228,7 +228,7 @@ let item37 = new PreguntasyRespuestas(37, "¿Cómo es la luz de la boya de pelig
 "Luz verde con ritmo 2+1",
 "Ninguna es la correcta"]);
 
-let item38 = new PreguntasyRespuestas(38, 'En caso de que dos embarcaciones de propulsión mecánica se encuentra "de vuelta encontrada" ¿cuál debe maniobrar?', 38, "Ambos, cayendo a estribor", 
+let item38 = new PreguntasyRespuestas(38, "En caso de que dos embarcaciones de propulsión mecánica se encuentra de vuelta encontrada ¿cuál debe maniobrar?", 38, "Ambos, cayendo a estribor", 
 ["Ambos, cayendo a babor",
 "El que se encuentra a sotavento",
 "El que se encuentra amurado a estribor",
@@ -245,7 +245,7 @@ let item40 = new PreguntasyRespuestas(40, "Cuando un buque iza dos esferas negra
 "Que se está dedicando a la pesca",
 "Ninguna es la correcta"]);
 
-let item41 = new PreguntasyRespuestas(41, 'Cuando dos buques de propulsión mecánica se encuentran en “situación de cruce” ¿cuál debe maniobrar?', 41, "El que tenga al otro por su costado de estribor", 
+let item41 = new PreguntasyRespuestas(41, "Cuando dos buques de propulsión mecánica se encuentran en situación de cruce ¿cuál debe maniobrar?", 41, "El que tenga al otro por su costado de estribor", 
 ["El que tenga al otro por su costado de babor",
 "El que navegue más rápido",
 "El más pequeño",
@@ -311,7 +311,7 @@ let item51 = new PreguntasyRespuestas(51, "¿Cuál es la nube de mayor desarroll
 "Stratocúmulus",
 "Ninguna es la correcta"]);
 
-let item52 = new PreguntasyRespuestas(52, '¿Desde dónde sopla un viento "terral"?', 52, "Desde la costa", 
+let item52 = new PreguntasyRespuestas(52, "Desde dónde sopla un viento terral?", 52, "Desde la costa", 
 ["Desde el mar",
 "Desde el norte",
 "Desde el sur",
@@ -360,7 +360,7 @@ let item59 = new PreguntasyRespuestas(59, "¿Qué instrumental utilizamos para c
 "Ninguna es la correcta"]);
 
 
-let item60 = new PreguntasyRespuestas(60, "Tomando como referencia el año 2021, seleccione la declinación magnética (aproximada y redondeando al menor número) si vemos en el carta náutica los siguientes datos: 8° 25' W 2014 (8' W)", 60, "9°", 
+let item60 = new PreguntasyRespuestas(60, "Tomando como referencia el año 2021, seleccione la declinación magnética (aproximada y redondeando al menor número) si vemos en el carta náutica los siguientes datos: 8° 25 W 2014 (8 W)", 60, "9°", 
 ["7°",
 "10°",
 "9,2°",
@@ -389,7 +389,7 @@ let item64 = new PreguntasyRespuestas(64, "¿Qué nombre recibe el régimen de m
 "Diurnas",
 "Ninguna es la correcta"]);
 
-let item65 = new PreguntasyRespuestas(65, '¿Qué es la "duración de la marea"?', 65, "Es la diferencia entre la hora de la plea y la hora de la baja", ["Momento en que se alcanza la bajamar y comienza la creciente",
+let item65 = new PreguntasyRespuestas(65, "¿Qué es la duración de la marea?", 65, "Es la diferencia entre la hora de la plea y la hora de la baja", ["Momento en que se alcanza la bajamar y comienza la creciente",
 "Momento en que finaliza la creciente y comienza la bajante",
 "Cantidad de agua que tiene el barco por debajo de la quilla",
 "Ninguna es la correcta"]);
@@ -406,7 +406,7 @@ let item67 = new PreguntasyRespuestas(67, "¿Que es el puntal?", 67, "Altura des
 "Altura que incluye el calado",
 "Ninguna es la correcta"]);
 
-let item68 = new PreguntasyRespuestas(68, '¿Con qué características de las embarcaciones a vela se relaciona el "par adrizante"?', 68, "Estabilidad", ["Estanqueidad",
+let item68 = new PreguntasyRespuestas(68, "¿Con qué características de las embarcaciones a vela se relaciona el par adrizante?", 68, "Estabilidad", ["Estanqueidad",
 "Estabilidad",
 "Habilitabilidad",
 "Ninguna es la correcta"]);
@@ -492,7 +492,7 @@ let item82 = new PreguntasyRespuestas(82, "¿Qué son las cuadernas?", 82, "Viga
 "Molde de fibra de vidrio que unen los baos",
 "Ninguna es la correcta"]);
 
-let item83 = new PreguntasyRespuestas(83, '¿A qué refiere el término "eslora en flotación"?', 83, "Longitud medida desde proa a popa al nivel de la línea de flotación.", 
+let item83 = new PreguntasyRespuestas(83, "¿A qué refiere el término eslora en flotación?", 83, "Longitud medida desde proa a popa al nivel de la línea de flotación.", 
 ["Longitud máxima total entre los extremos más distantes de proa a popa",
 "Parte del casco que no se encuentra sumergida",
 "Peso del barco expresado en toneladas métricas",
@@ -531,13 +531,13 @@ let item89 = new PreguntasyRespuestas(89, "¿Qué es el vang?", 89, "Aparejo que
 "Una de las escotas de la vela proel",
 "Ninguna es la correcta"]);
 
-let item90 = new PreguntasyRespuestas(90, "¿Qué es un portaespía?", 90, 'Herraje con forme de "C" que sirve para reduce la fricción de los cabos con otros bordes del barco', 
+let item90 = new PreguntasyRespuestas(90, "¿Qué es un portaespía?", 90, "Herraje con forme de C que sirve para reduce la fricción de los cabos con otros bordes del barco", 
 ["Herraje firme a cubierta que se utiliza para sujetar cabos",
 "Roldana que sirve para desviar la trayectoria de cabos",
 "Pieza con forma de dos cuernos que sirve para hacer firmes cabos",
 "Ninguna es la correcta"]);
 
-let item91 = new PreguntasyRespuestas(91, "¿Qué son los rizos?", 91, "Conjunto de orificios practicados en la vela y que sirven para reducir el velamen", ['Doblez que se genera en la vela cuando ésta no "porta"',
+let item91 = new PreguntasyRespuestas(91, "¿Qué son los rizos?", 91, "Conjunto de orificios practicados en la vela y que sirven para reducir el velamen", ["Doblez que se genera en la vela cuando ésta no porta",
 "Conjunto de cabos utilizados para sujetar la vela mayor cuando ésta se encuentra arriada",
 "Deformaciones de los cabos producidas cuando se retuercen",
 "Ninguna es la correcta"]);
@@ -553,13 +553,13 @@ let item93 = new PreguntasyRespuestas(93, "¿Cómo se denomina el fondeo en el q
 "Largos de proa",
 "Ninguna es la correcta"]);
 
-let item94 = new PreguntasyRespuestas(94, "¿Qué matafuego sería el más apto para una embarcación deportiva?", 94, 'De polvo clase "ABC"', 
+let item94 = new PreguntasyRespuestas(94, "¿Qué matafuego sería el más apto para una embarcación deportiva?", 94, "De polvo clase ABC", 
 ["De gas carbónico",
 "De agua",
 "De hidrógeno",
 "Ninguna es la correcta"]);
 
-let item95 = new PreguntasyRespuestas(95, '¿Qué significa la expresión "correr el temporal"?', 95, "Navegar en el mismo sentido que el temporal", ["Navegar en contra del temporal",
+let item95 = new PreguntasyRespuestas(95, "¿Qué significa la expresión correr el temporal?", 95, "Navegar en el mismo sentido que el temporal", ["Navegar en contra del temporal",
 "Arriar todas las velas",
 "Navegar a la capa",
 "Ninguna es la correcta"]);

@@ -217,7 +217,7 @@ let item35 = new PreguntasyRespuestas(35, "¿Qué significa un cuadrado sobre un
 "Aviso de temporal",
 "Ninguna es la correcta"]);
 
-let item36 = new PreguntasyRespuestas(36, "Cuando dos barcos reciben viento por la misma banda…", 36, "Debe maniobrar el que se encuentre a barlovento", ["Tiene prioridad el que esta amurado a babor",
+let item36 = new PreguntasyRespuestas(36, "Cuando dos barcos a vela reciben viento por la misma banda…", 36, "Debe maniobrar el que se encuentre a barlovento", ["Tiene prioridad el que esta amurado a babor",
 "Tiene prioridad el que está a barlovento",
 "Debe maniobrar el que está amurado a estribor",
 "Ninguna es la correcta"]);
@@ -440,7 +440,7 @@ let item73 = new PreguntasyRespuestas(73, "Navegando de noche veo una luz blanca
 "Por cualquier lugar, pero con precaución",
 "Ninguna es la correcta"]);
 
-let item74 = new PreguntasyRespuestas(74, "¿Qué significa una boya de color roja-verde-roja?", 74, "Canal preferido a babor", 
+let item74 = new PreguntasyRespuestas(74, "¿Qué significa una boya de color rojo-verde-rojo?", 74, "Canal preferido a babor", 
 ["Canal preferido a estribor",
 "Canal para circular con cuidado",
 "Boya de estribor",
@@ -458,9 +458,9 @@ let item76 = new PreguntasyRespuestas(76, "¿Qué angulo abarca la la luz de top
 "135°",
 "Ninguna es la correcta"]);
 
-let item77 = new PreguntasyRespuestas(77, "Seleccione la afirmación correcta respecto de la luz de remolque", 77, "Es de amarilla y posee un ángulo de 135°", 
+let item77 = new PreguntasyRespuestas(77, "Seleccione la afirmación correcta respecto de la luz de remolque", 77, "Es de color amarillo y posee un ángulo de 135°", 
 ["Es blanca y posee un ángulo de 135°",
-"Es amarilla y posee un ángulo de 135°",
+"Es de color amarillo y posee un ángulo de 225°",
 "Es azul y posee un ángulo de 125°",
 "Ninguna es la correcta"]);
 
@@ -581,11 +581,26 @@ let item98 = new PreguntasyRespuestas(98, "¿Cómo se llaman en Argentina el án
 "Isobata",
 "Ninguna es la correcta"]);
 
-// let item98 = new PreguntasyRespuestas(98, "Se considera buque que alcanza a aquel que se aproxima a otro viniendo a...", 98, "", ["","","",""]);
+let item99 = new PreguntasyRespuestas(99, "Cuando dos barcos a vela reciben el viento por bandas contrarias…", 99, "Debe maniobrar el que lo reciba por su banda babor", 
+["Tiene prioridad el que esta amurado a babor",
+"Tiene prioridad el que está a barlovento",
+"Debe maniobrar el que está amurado a estribor",
+"Ninguna es la correcta"]);
 
-// let item99 = new PreguntasyRespuestas(99, "En la fase lunar de Sicigia la amplitud de la marea es:", 99, "", ["","","",""]);
+let item100 = new PreguntasyRespuestas(100, "¿Cómo se llama la marea que en un lugar X del planeta tiene una pleamar y dos bajamares por día o viceversa?", 100, "Marea mixta", 
+["Marea de sicigia",
+"Marea diurna",
+"Marea semidiurna",
+"Marea de cuadratura",
+"Ninguna es la correcta"]);
 
-// let item100 = new PreguntasyRespuestas(100, "¿Cómo se llama la marea que en un lugar X del planeta tiene una pleamar y dos bajamares por día o viceversa?", 100, "", ["","","",""]);
+let item101 = new PreguntasyRespuestas(101, "En las mareas de Sicigia la amplitud de la marea es:", 101, "Mayor que en cuadratura", 
+["Menor que en cuadratura",
+"Igual que en cuadratura",
+"No cambia",
+"Ninguna es la correcta"]);
+
+let item102 = new PreguntasyRespuestas(102, "Se considera buque que alcanza a aquel que se aproxima a otro viniendo...", 102, "En un ángulo mayor a 22,5° a popa medido desde el través del buque alcanzado", ["En un ángulo menor a 22,5° a popa medido desde el través del buque alcanzado","En un ángulo menor a 135° a popa medido desde el través del buque alcanzado","En un ángulo mayor a 135° a popa medido desde el través del buque alcanzado","Ninguna es la correcta"]);
 
 
 
@@ -687,7 +702,11 @@ let contenedorItems = [
   item95,
   item96,
   item97,
-  item98
+  item98,
+  item99,
+  item100,
+  item101,
+  item102
 ];
 
 export { contenedorItems }

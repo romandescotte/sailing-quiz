@@ -133,10 +133,10 @@ let item21 = new PreguntasyRespuestas(21, "En el momento que se produce la chisp
 "Ambas válvulas (de admisión y escape) se encuentran abiertas",
 "Ninguna es la correcta"]);
 
-let item22 = new PreguntasyRespuestas(22, "¿Qué causa la explosión en un motor diesel?", 22, "La chispa que se produce en la bujía", 
+let item22 = new PreguntasyRespuestas(22, "¿Qué causa la explosión en un motor diesel?", 22, "El combustible sobrecalentado a causa de la comprensión", 
 ["La bujía sobrecalentada",
 "El gas sobrecalentado a causa de la compresión",
-"El combustible sobrecalentado a causa de la comprensión",
+"La chispa de la bujía",
 "Ninguna es la correcta"]);
 
 let item23 = new PreguntasyRespuestas(23, "¿Cuál es el comportamiento de la hélice dextrógira?", 23, "Gira en sentido horario cuando la embarcación avanza", 

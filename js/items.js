@@ -434,9 +434,9 @@ let item72 = new PreguntasyRespuestas(72, "¿Por dónde debo pasar una boya verd
 "Entrando al puerto, dejándola a estribor",
 "Ninguna es la correcta"]);
 
-let item73 = new PreguntasyRespuestas(73, "Navegando de noche veo una luz blanca con grupo de 3 destellos. ¿Por dónde debor pasarla?", 73, "Por el este de la boya", 
-["Por el norte de la boya",
-"Por el oeste de la boya",
+let item73 = new PreguntasyRespuestas(73, "Navegando de noche veo una luz blanca con grupo de 3 destellos. ¿Por dónde debor pasarla?", 73, "Por el este", 
+["Por el norte",
+"Por el oeste",
 "Por cualquier lugar, pero con precaución",
 "Ninguna es la correcta"]);
 

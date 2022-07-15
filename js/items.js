@@ -372,10 +372,10 @@ let item61 = new PreguntasyRespuestas(61, "¿Desde que línea contamos la longit
 "Ecuador",
 "Ninguna es la correcta"]);
 
-let item62 = new PreguntasyRespuestas(62, "¿En qué escala se leen las distancias medidas en la carta?", 62, "En la de las longitudes", 
+let item62 = new PreguntasyRespuestas(62, "¿En qué escala se leen las distancias medidas en la carta?", 62, "En la de las latitudes", 
 ["En la regla",
 "En la que de el profesor",
-"En la de latitudes",
+"En la de longitud",
 "Ninguna es la correcta"]);
 
 let item63 = new PreguntasyRespuestas(63, "¿Cómo se llaman en Argentina el ángulo formado entre el Norte y la visual a un punto notable de la costa?", 63, "Marcación", 
@@ -575,6 +575,12 @@ let item97 = new PreguntasyRespuestas(97, "Todo buque está obligado a mantener 
 "Si el capitán así lo ordena",
 "Ninguna es la correcta"]);
 
+let item98 = new PreguntasyRespuestas(98, "¿Cómo se llaman en Argentina el ángulo formado entre la línea de crujía y un objeto determinado?", 98, "Demora", 
+["Marcación",
+"Enfilación",
+"Isobata",
+"Ninguna es la correcta"]);
+
 // let item98 = new PreguntasyRespuestas(98, "Se considera buque que alcanza a aquel que se aproxima a otro viniendo a...", 98, "", ["","","",""]);
 
 // let item99 = new PreguntasyRespuestas(99, "En la fase lunar de Sicigia la amplitud de la marea es:", 99, "", ["","","",""]);
@@ -681,6 +687,7 @@ let contenedorItems = [
   item95,
   item96,
   item97,
+  item98
 ];
 
 export { contenedorItems }

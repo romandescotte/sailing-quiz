@@ -217,7 +217,8 @@ let item35 = new PreguntasyRespuestas(35, "¿Qué significa un cuadrado sobre un
 "Aviso de temporal",
 "Ninguna es la correcta"]);
 
-let item36 = new PreguntasyRespuestas(36, "Cuando dos barcos a vela reciben viento por la misma banda…", 36, "Debe maniobrar el que se encuentre a barlovento", ["Tiene prioridad el que esta amurado a babor",
+let item36 = new PreguntasyRespuestas(36, "Cuando dos barcos a vela reciben viento por la misma banda…", 36, "Debe maniobrar el que se encuentre a barlovento", 
+["Tiene prioridad el que esta amurado a babor",
 "Tiene prioridad el que está a barlovento",
 "Debe maniobrar el que está amurado a estribor",
 "Ninguna es la correcta"]);
@@ -600,7 +601,23 @@ let item101 = new PreguntasyRespuestas(101, "En las mareas de Sicigia la amplitu
 "No cambia",
 "Ninguna es la correcta"]);
 
-let item102 = new PreguntasyRespuestas(102, "Se considera buque que alcanza a aquel que se aproxima a otro viniendo...", 102, "En un ángulo mayor a 22,5° a popa medido desde el través del buque alcanzado", ["En un ángulo menor a 22,5° a popa medido desde el través del buque alcanzado","En un ángulo menor a 135° a popa medido desde el través del buque alcanzado","En un ángulo mayor a 135° a popa medido desde el través del buque alcanzado","Ninguna es la correcta"]);
+let item102 = new PreguntasyRespuestas(102, "Se considera buque que alcanza a aquel que se aproxima a otro viniendo...", 102, "En un ángulo mayor a 22,5° a popa medido desde el través del buque alcanzado",
+["En un ángulo menor a 22,5° a popa medido desde el través del buque alcanzado",
+"En un ángulo menor a 135° a popa medido desde el través del buque alcanzado",
+"En un ángulo mayor a 135° a popa medido desde el través del buque alcanzado",
+"Ninguna es la correcta"]);
+
+let item103 = new PreguntasyRespuestas(103, "En caso de que un velero y un buque de propulsión mecánica menor a 50 metros se encuentra en situación de cruce, ¿cuál debe maniobrar?", 103, "El buque de propulsión mecánica",
+["El velero",
+"El que tenga al otro por su costado estribor",
+"El que reciba el viento por su amura de babor",
+"El que esté a barlovento"]);
+
+let item104 = new PreguntasyRespuestas(103, "¿Qué altura de marea necesito para poder navegar en un lugar con una profundidad de 0,6mts sabiendo que mi embarcación cala 1,5mts y que necesito 15cm de margen de seguridad?", 103, "1,05 mts",
+["0,9 mts",
+"1,95 cm",
+"2,25 mts",
+"2,1 mts"]);
 
 
 
@@ -706,7 +723,9 @@ let contenedorItems = [
   item99,
   item100,
   item101,
-  item102
+  item102,
+  item103,
+  item104
 ];
 
 export { contenedorItems }

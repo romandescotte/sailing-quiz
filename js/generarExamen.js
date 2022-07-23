@@ -22,9 +22,9 @@ function generarExamen(cantidadPreguntas, cantidadRespuestas) {
 
 		seleccionadorPreguntas(cantidadPreguntas);
     seleccionadorRespuestas(cantidadRespuestas);
-    // console.log(contenedorItemsPrevio);
+    console.log("contenedorItemsPrevio: ", contenedorItemsPrevio);
     mezclaRespuestas(0,cantidadRespuestas-1);
-    // console.log("contenedorItemsExamen: ",contenedorItemsExamen);
+    console.log("contenedorItemsExamen: ", contenedorItemsExamen);
     muestraItemsExamen();		
 	} else {  
     alert("El número requerido de preguntas a mostrar es mayor a la cantidad de preguntas disponibles");
@@ -37,13 +37,17 @@ function seleccionadorPreguntas(cantidadDePreguntas) {
   for(let i = 0; i < preguntasSeleccionadas.length; i++) {
     contenedorItemsPrevio.push(new ItemsPrevio(preguntasSeleccionadas[i]));        
   }    
-  // console.log(preguntasSeleccionadas)
+  console.log("preguntas contenedorItemsPrevio: ", preguntasSeleccionadas)
   return preguntasSeleccionadas; 
 }
 
 function seleccionadorRespuestas(cantidadDeRespuestas) {
     
   let respuestasSeleccionadas = [];
+
+  // for(let i = 0; i < contenedorItemsPrevio.length; i++) {
+  //   chequearCantidadMaximaRespuestas(cantidadDeRespuestas, 4, contenedorItemsPrevio[i].preguntaId)
+  // };
 
   for(let i = 0; i < contenedorItemsPrevio.length ; i++) {
 
@@ -56,7 +60,8 @@ function seleccionadorRespuestas(cantidadDeRespuestas) {
     let respuestasId = generarListaNumeros(cantidadDeRespuestas, idPregunta, 0, cantidadMaximaRespuestas-1);       
 
     let limiteRespuestasMaximasRoto = chequearCantidadMaximaRespuestas(cantidadDeRespuestas, cantidadMaximaRespuestas, idPregunta);
-    
+    // console.log("respuestasId", respuestasId);
+
     if(limiteRespuestasMaximasRoto) {
       break;
     } else {
@@ -67,16 +72,16 @@ function seleccionadorRespuestas(cantidadDeRespuestas) {
       }
     } 
   }   
-  // console.log('Respuestas seleccionadas: ', respuestasSeleccionadas);
+  console.log('respuestasSeleccionadas() ', respuestasSeleccionadas);
   return respuestasSeleccionadas; 
 }
 
-function seleccionadorRespuestaCorrecta(i) {
+// function seleccionadorRespuestaCorrecta(i) {
   
-  let idPregunta = contenedorItemsPrevio[i].preguntaId;    
-  contenedorItemsPrevio[i].respuestas.push(idPregunta);
-  return contenedorItemsPrevio;
-}
+//   let idPregunta = contenedorItemsPrevio[i].preguntaId;    
+//   contenedorItemsPrevio[i].respuestas.push(idPregunta);
+//   return contenedorItemsPrevio;
+// }
 
 function mezclaRespuestas(desdeNumero, hastaNumero) {
    
@@ -101,12 +106,19 @@ function mezclaRespuestas(desdeNumero, hastaNumero) {
 }
 
 function muestraItemsExamen() {
-    
-  let contadorId2 = 0;
+  muestraPreguntas();
+  muestraRespuestas();    
+}
+
+function muestraPreguntas() {
+  
+  let textoPreguntas = [];
   for(let i = 0 ; i < contenedorItemsExamen.length ; i++) {
 
     let contadorId1 = i + 1;
+
     let texto_pregunta = `${contadorId1}) ${contenedorItems[contenedorItemsExamen[i].preguntaId].textoPregunta}`;
+    textoPreguntas.push(texto_pregunta);
 
     //Agarra formulario existente
     let $formulario = document.getElementById('form_preguntas');
@@ -126,8 +138,6 @@ function muestraItemsExamen() {
     let h3_id = `h3_pregunta_${contadorId1}`;
     $crea_h3.setAttribute("id", h3_id); 
     $crea_h3.classList.add('titulo-pregunta');
-    
-
 
     //Se selecciona el elemento variable            
     let $h3 = document.querySelector(`h3[id="h3_pregunta_${contadorId1}"]`);
@@ -138,47 +148,58 @@ function muestraItemsExamen() {
     //Se adjunta el nodo al elemento.
     $h3.appendChild($nodo_texto_pregunta);
 
-    // Respuestas:
-    
-    for(let j = 0 ; j < contenedorItemsExamen[0].respuestas.length; j++) {
-        
+  }
+}
+
+function muestraRespuestas() {
+
+  let contadorId1 = 0;
+  let contadorId2 = 0;
+  
+  for(let i = 0; i < contenedorItemsExamen.length; i++) {
+
+    contadorId1++;
+
+    for(let j = 0; j < contenedorItemsExamen[0].respuestas.length; j++) {
+      
       contadorId2++;       
-
+  
       let respuestaIndex = contenedorItemsExamen[i].respuestas[j];
-
+  
       let preguntaIndex = contenedorItemsExamen[i].preguntaId;
-
+  
       var texto_respuestas;         
-
+  
       if(respuestaIndex === preguntaIndex) {
-
+  
         texto_respuestas = `${contenedorItems[preguntaIndex].textoRespuestaCorrecta}`;
       } else {
-
+  
         texto_respuestas = `${contenedorItems[preguntaIndex].respuestasPosibles[respuestaIndex]}`;
       }                     
-
+  
       //Seleccionar el elemento existente
       let $ul = document.querySelector(`ul[id="ul_pregunta_${contadorId1}"]`);
-
+  
       //Crear elementos 
       let $crea_li = document.createElement("li");
       let $crea_inputRadio = document.createElement("input");                
       let $crea_label = document.createElement("label");  
-
+  
       //Adjuntar elementos creados
       $ul.appendChild($crea_li);
       $ul.appendChild($crea_inputRadio);
       $ul.appendChild($crea_label);           
-
+  
       //Setear atributos
+      let ul_id = `ul_pregunta_${contadorId1}`;
       let li_id = `li_respuesta_${contadorId2}`;
       let input_id = `input_respuesta_${contadorId2}`;
       let input_name = `name_input_${contadorId1}`;
       let label_for = input_id;
       let label_id = `id_label_${contadorId2}`; 
       let input_value = texto_respuestas;                        
-
+  
       $crea_li.setAttribute("id", li_id);
       $crea_li.classList.add('respuestas');
       $crea_inputRadio.setAttribute("id", input_id);
@@ -186,21 +207,19 @@ function muestraItemsExamen() {
       $crea_inputRadio.setAttribute("name", input_name);
       $crea_label.setAttribute("for", label_for);
       $crea_label.setAttribute("id", label_id);
-      $crea_inputRadio.setAttribute("value", input_value);
-
-
+      $crea_inputRadio.setAttribute("value", input_value);  
+  
       //Asignacion de la respuesta al elemento HTML de la lista:
       //Se selecciona el elemento variable                
       let $label = document.querySelector(`ul[id="${ul_id}"] label[id="${label_id}"]`);
-
+  
       //Se crea el nodo de texto con la respuesta
       let $nodo_respuesta = document.createTextNode(texto_respuestas);
-
+  
       //Se adjunta el nodo al elemento.
       $label.appendChild($nodo_respuesta); 
       $crea_li.appendChild($crea_inputRadio);   
-      $crea_li.appendChild($crea_label);
-
+      $crea_li.appendChild($crea_label);  
     }
   }
 }

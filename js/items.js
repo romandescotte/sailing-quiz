@@ -565,7 +565,7 @@ let item95 = new PreguntasyRespuestas(95, "¿Qué significa la expresión correr
 "Navegar a la capa",
 "Ninguna es la correcta"]);
 
-let item96 = new PreguntasyRespuestas(96, "¿En que categoría cae un velero navegando a motor con las velas izadas?", 97, "Buque a vela", 
+let item96 = new PreguntasyRespuestas(96, "¿En que categoría cae un velero navegando a motor con las velas izadas?", 96, "Buque a vela", 
 ["Buque a motor",
 "Buque a vela y motor",
 "Buque sin gobierno",
@@ -613,13 +613,47 @@ let item103 = new PreguntasyRespuestas(103, "En caso de que un velero y un buque
 "El que reciba el viento por su amura de babor",
 "El que esté a barlovento"]);
 
-let item104 = new PreguntasyRespuestas(103, "¿Qué altura de marea necesito para poder navegar en un lugar con una profundidad de 0,6mts sabiendo que mi embarcación cala 1,5mts y que necesito 15cm de margen de seguridad?", 103, "1,05 mts",
+let item104 = new PreguntasyRespuestas(104, "¿Qué altura de marea necesito para poder navegar en un lugar con una profundidad de 0,6mts sabiendo que mi embarcación cala 1,5mts y que necesito 15cm de margen de seguridad?", 104, "1,05 mts",
 ["0,9 mts",
 "1,95 cm",
 "2,25 mts",
 "2,1 mts"]);
 
+let item105 = new PreguntasyRespuestas(105, "Seleccione la definición correcta de obra viva", 105, "Parte del casco sumergida bajo el agua",
+["Parte del casco por encima de la línea de flotación",
+"Altura desde la quilla hasta la cubierta",
+"Medida desde la línea de flotación hasta el extremo de la quilla o quillote",
+"Ninguna es la correcta"]);
 
+let item106 = new PreguntasyRespuestas(106, "Seleccione la definición correcta de obra muerta", 106, "Parte del casco por encima de la línea de flotación",
+["Parte del casco por debajo",
+"Altura desde la quilla hasta la cubierta",
+"Medida desde la línea de flotación hasta la cubierta",
+"Ninguna es la correcta"]);
+
+let item107 = new PreguntasyRespuestas(107, "Seleccione la definición correcta de sentina", 107, "Parte del casco por debajo del piso de la cabina",
+["Parte del casco entre la quilla y la línea de flotación",
+"Lugar para la estiba de cabos y elementos de fondeo",
+"Tablas de madera sobre la que se asienta la cubierta",
+"Ninguna es la correcta"]);
+
+let item108 = new PreguntasyRespuestas(108, "Seleccione la definición correcta de sentina", 108, "Parte del casco por debajo del piso de la cabina",
+["Parte del casco entre la quilla y la línea de flotación",
+"Lugar para la estiba de cabos y elementos de fondeo",
+"Tablas de madera sobre la que se asienta la cubierta",
+"Ninguna es la correcta"]);
+
+let item109 = new PreguntasyRespuestas(109, "¿Qué es el pantoque?", 109, "Parte del casco comprendida entre la quilla y la línea de flotación",
+["Parte del casco por debajo del piso de la cabina",
+"Parte del casco comprendida entre el quillote y la línea de flotación",
+"Parte trasera del casco que conforma el final de la embarcación",
+"Ninguna es la correcta"]);
+
+let item110 = new PreguntasyRespuestas(110, "¿Qué es el arrufo?", 110, "Curvatura que presentan algunas embarcaciones donde proa y popa se encuentran mas elevados que el través",
+["Curvatura donde el través de la embarcación se encuentra más elevado que la proa y la popa",
+"Elemento que sirve de refuerzo a las cuadernas",
+"Curvatura de las vigas donde se asienta la cubierta",
+"Ninguna es la correcta"]);
 
 let contenedorItems = [
   item1,

@@ -1,10 +1,12 @@
 import { generarExamen } from "./generarExamen.js"
 import { corregirExamen } from "./corregirExamen.js"
 
-let cantidadPreguntas = 20; //96 maximo
-let cantidadRespuestas = 4; //si pongo mas de 4 a veces se traba el loop y aveces entra en el if que comprueba si hay respuestas posibles
+//104 maximo
+let cantidadPreguntas = 20; 
+let cantidadRespuestas = 5; 
+let iteracionesMaximasRespuestas = 3;
 
-generarExamen(cantidadPreguntas, cantidadRespuestas);
+generarExamen(cantidadPreguntas, cantidadRespuestas, iteracionesMaximasRespuestas);
 
 let $botonCorregir = document.querySelector("#boton-corregir");
 $botonCorregir.addEventListener('click', corregirExamen);

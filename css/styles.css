@@ -151,6 +151,15 @@ body {
   body {
     padding: 5px 5px;
   }
+
+  main {
+    padding: 0 10px;
+  }
+
+  main p {
+    text-align: center;
+  }
+
   .seccion_preguntas {
     padding: 0 0;
   }
@@ -166,6 +175,8 @@ body {
     margin-left: 5px;
     margin-bottom: 20px
   }
+
+
 }
 
 .btn-container {

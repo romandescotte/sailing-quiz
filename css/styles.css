@@ -143,42 +143,6 @@ body {
   font-weight: 700;
 }
 
-@media screen and (max-width: 700px) {
-  html {
-    font-size: 15px; 
-  }
-
-  body {
-    padding: 5px 5px;
-  }
-
-  main {
-    padding: 0 10px;
-  }
-
-  main p {
-    text-align: center;
-  }
-
-  .seccion_preguntas {
-    padding: 0 0;
-  }
-  .items {
-    margin: 0 0 60px 0;
-    padding: 20px 10px;
-  }
-  .items li:nth-child(2) {
-    margin-top: 20px;
-  }
-  .respuestas {
-    font-size: 1rem;
-    margin-left: 5px;
-    margin-bottom: 20px
-  }
-
-
-}
-
 .btn-container {
   display: flex;
   width: 30%;
@@ -277,4 +241,57 @@ footer {
 
 #cantidad-preguntas {
   width: 110px;
+}
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 15px; 
+  }
+
+  body {
+    padding: 5px 5px;
+  }
+
+  main {
+    padding: 0 10px;
+  }
+
+  main p {
+    text-align: center;
+  }
+
+  form[name=generarExamen] {
+    flex-direction: column;
+    margin: 10px 0;
+  }
+
+  form[name=generarExamen] label {
+    margin: 10px 0px;
+  }
+
+  #quiz {
+    margin: 20px 0 0 0;
+  }
+
+  .seccion_preguntas {
+    padding: 0 0;
+  }
+  .items {
+    margin: 0 0 60px 0;
+    padding: 20px 10px;
+  }
+  .items li:nth-child(2) {
+    margin-top: 20px;
+  }
+  .respuestas {
+    font-size: 1rem;
+    margin-left: 5px;
+    margin-bottom: 20px
+  }
+
+  .btn-container {
+    width: 60%;
+  }
+
+
 }

@@ -253,6 +253,9 @@ footer {
 
   main {
     padding: 0 10px;
+    margin-bottom: -5rem;
+    padding-bottom: 5rem;
+    min-height: 100%;
   }
 
   main p {

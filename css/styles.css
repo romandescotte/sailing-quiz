@@ -249,6 +249,7 @@ footer {
 
   body {
     padding: 5px 5px;
+    justify-content: space-around;
   }
 
   main {

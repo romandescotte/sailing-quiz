@@ -218,8 +218,7 @@ form[name=generarExamen] label {
 }
 
 footer {
-  display: flex; 
-  position:relative;
+  display: flex;  
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -273,6 +272,10 @@ footer {
     margin: 20px 0 0 0;
   }
 
+  #examen {
+    margin: 0 0 20px 0;
+  }
+
   .seccion_preguntas {
     padding: 0 0;
   }
@@ -291,6 +294,11 @@ footer {
 
   .btn-container {
     width: 60%;
+  }
+
+  footer {
+    position: relative;
+    bottom : 0;
   }
 
 

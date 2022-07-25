@@ -16,7 +16,7 @@ function ItemsExamen(preguntaId, textoPregunta) {
 	this.respuestas = []
 }
 
-function generarExamen(cantidadPreguntas, cantidadRespuestas, iteracionesMaximasRespuestas) {
+function generarExamen(cantidadPreguntas, cantidadRespuestas, iteracionesMaximasRespuestas) {  
   chequeaItems();
 	if(cantidadPreguntas <= cantidadMaximaPreguntas) {
 		seleccionadorPreguntas(cantidadPreguntas);

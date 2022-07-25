@@ -12,26 +12,52 @@
 		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-	<body>
-		<h1>Sailing Quiz !</h1>		
-		<div class="seccion_preguntas">
-			<div id="preguntas">				
-				<!-- <i class="fa-regular fa-sailboat"></i>
-				<i class="fa-solid fa-sailboat"></i>				 -->
-				<form id="form_preguntas" action="#" name="examen">													
-				</form>		
-				<div class="btn-container">
-					<button type="button" id="boton-corregir"><a>Corregir</a></button>
-					<button type="button" id="boton-resetear"><a>Resetear</a></button>
-				</div>						
-			</div>			
-		</div>
-		<div class="popup-container">
-			<div class="correccion-popup">				
-				<p id="parrafo-correccion"></p>				
-				<button id="btn-cerrar">Cerrar</button>
-			</div>
-		</div>	
-	<script type="module" src="./js/main.js"></script>	
-	</body>	
+	<body>   
+    <h1>Sailing Quiz</h1>		
+    <main>
+      <p>Bienvenido a Sailing Quiz!</p>
+      <p>Ingresa la cantidad de preguntas que deseas contestar y la cantidad de respuestas por pregunta que quisieras recibir</p>
+      <form action="GET" name="generarExamen">
+        <label for="cantidad-preguntas" >Preguntas: </label>        
+        <input id="cantidad-preguntas" name="cantidadPreguntas" type="number" max="104" min="1" placeholder="Max=104">
+        <label for="cantidad-respuestas">Respuestas: </label>
+        <select name="cantidadRespuestas" id="cantidad-respuestas">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>         
+        </select>        
+      </form>
+      <button id="quiz">Ir al Quiz</button>
+    </main>
+    <div id="examen" class="ocultar-examen">
+      <div class="seccion_preguntas">
+        <div id="preguntas">				
+          <!-- <i class="fa-regular fa-sailboat"></i>
+          <i class="fa-solid fa-sailboat"></i>				 -->
+          <form id="form_preguntas" action="#" name="examen">													
+          </form>		
+          <div class="btn-container">
+            <button type="button" id="boton-corregir"><a>Corregir</a></button>
+            <button type="button" id="boton-resetear"><a>Resetear</a></button>
+          </div>						
+        </div>			
+      </div>
+      <div class="popup-container">
+        <div class="correccion-popup">				
+          <p id="parrafo-correccion"></p>				
+          <button id="btn-cerrar">Cerrar</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Made with <span style="color: #e25555;">&#128156;</span> in Argentina</p>
+      <div class="logo-container">
+        <a href="https://github.com/romandescotte/">
+          <img src="./img/GitHub-Mark-64px.png" alt="GitHub Logo" id="gh-logo">
+        </a>
+      </div>
+    </footer>	    
+	  <script type="module" src="./js/main.js"></script>	
+	</body>	  
 </html>

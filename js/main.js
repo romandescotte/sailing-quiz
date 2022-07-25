@@ -10,6 +10,12 @@ $botonResetear.addEventListener('click', resetearExamen)
 let $botonGenerarExamen = document.querySelector('#quiz');
 $botonGenerarExamen.addEventListener('click', muestraExamen);
 
+window.addEventListener('keydown', function(event) { 
+  if(event.key === 'Enter') {
+    muestraExamen(event);
+  }
+})
+
 function muestraExamen(event) {
   event.preventDefault();  
   var cantidadPreguntas = Number(document.forms['generarExamen'].cantidadPreguntas.value); 

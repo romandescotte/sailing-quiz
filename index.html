@@ -5,11 +5,11 @@
 	<meta charset="utf-8" />
 	<meta lang="es" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/normalize.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<script src="https://kit.fontawesome.com/fafa67670d.js" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 	<body>   
@@ -19,9 +19,9 @@
       <p>Ingresa la cantidad de preguntas que deseas contestar y la cantidad de respuestas por pregunta que quisieras recibir</p>
       <form name="generarExamen">
         <label for="cantidad-preguntas" >Preguntas: </label>        
-        <input id="cantidad-preguntas" name="cantidadPreguntas" type="number" max="104" min="1" placeholder="Max=104">
+        <input id="cantidad-preguntas" class="input-usuario" name="cantidadPreguntas" type="number" max="104" min="1" placeholder="Max=104">
         <label for="cantidad-respuestas">Respuestas: </label>
-        <select name="cantidadRespuestas" id="cantidad-respuestas">
+        <select name="cantidadRespuestas" class="input-usuario" id="cantidad-respuestas">
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
@@ -43,11 +43,12 @@
           </div>						
         </div>			
       </div>
-      <div class="popup-container">
-        <div class="correccion-popup">				
-          <p id="parrafo-correccion"></p>				
-          <button id="btn-cerrar">Cerrar</button>
-        </div>
+      
+    </div>
+    <div class="popup-container">
+      <div class="correccion-popup">				
+        <p id="parrafo-correccion"></p>				
+        <button id="btn-cerrar">Ver corrección</button>
       </div>
     </div>
     <footer>

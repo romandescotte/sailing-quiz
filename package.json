@@ -1,0 +1,27 @@
+{
+  "name": "sailing-quiz",
+  "version": "1.0.0",
+  "description": "simulador de examen de timonel",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romandescotte/sailing-quiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romandescotte/sailing-quiz/issues"
+  },
+  "homepage": "https://github.com/romandescotte/sailing-quiz#readme",
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
